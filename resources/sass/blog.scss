@@ -1,0 +1,43 @@
+//PALETA
+$marino: #102444;
+$marino-oscuro: #081830;
+$marino-medio: #183058;
+$lima: #79BC26;
+$lima-claro: #93D14A;
+$nube: #F8F8F8;
+
+//COLORES QUE TRAE BOOSTRAP
+$primary: $lima;
+$secondary: $marino;
+$success: $lima;
+$dark: $marino-oscuro;
+$light: $nube;
+$body-bg: $nube;
+$body-color: $marino;
+$link-color: $marino;
+$link-hover-color: #548A0C;
+$color-contrast-dark: $marino-oscuro;
+$min-contrast-ratio: 3;
+
+//TIPOS DE FUETES
+$font-family-sans-serif: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$headings-font-family: 'Montserrat', sans-serif;
+$headings-font-weight: 800;
+$border-radius: .75rem;
+$border-radius-lg: 1rem;
+$btn-border-radius: 50rem;
+$btn-border-radius-sm: 50rem;
+$btn-border-radius-lg: 50rem;
+$btn-font-weight: 700;
+$input-focus-border-color: $lima;
+
+@import 'bootstrap/scss/bootstrap';
+
+.bg-marino        { background-color: $marino !important; }
+.bg-marino-oscuro { background-color: $marino-oscuro !important; }
+.bg-marino-medio  { background-color: $marino-medio !important; }
+.text-lima        { color: $lima-claro !important; }
+.text-marino      { color: $marino !important; }
+.font-display     { font-family: $headings-font-family; }
+.subrayado-lima   { width: 5rem; height: .35rem; border-radius: 1rem; background: $lima; }
+html { scroll-behavior: smooth; }
