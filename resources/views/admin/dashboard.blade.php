@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="p-4 p-md-5 mb-4 rounded-4 bg-marino text-white">
-    <h1 class="h2 font-display text-uppercase mb-1">Hola, {{ auth()->user()->name }} 👋</h1>
+    <h1 class="h2 font-display text-uppercase mb-1">Hola, {{ auth()->user()->name }}</h1>
     <p class="mb-0 text-white-50">Resumen de publicaciones del Blog de la Semana de Sistemas 2026</p>
 </div>
 

@@ -22,9 +22,12 @@
         <div class="collapse navbar-collapse" id="menuAdmin">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('dashboard') ? 'active fw-bold' : '' }}" href="{{ route('dashboard') }}">Panel</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('admin.categories.*') ? 'active fw-bold' : '' }}" href="{{ route('admin.categories.index') }}">Categorías</a>
                 </li>
-                {{-- Aquí agregaremos: Entradas --}}
+                
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
