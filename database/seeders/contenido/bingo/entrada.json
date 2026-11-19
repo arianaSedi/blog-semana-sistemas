@@ -1,0 +1,28 @@
+{
+    "titulo": "Bingo",
+    "fecha": "2026-11-18",
+    "categoria": "Bingo",
+    "categoria_descripcion": "Dinámica, experiencia y participación.",
+    "resumen": null,
+    "contenido": "Como parte de las actividades de la Semana de Sistemas 2026, se realizó una emocionante dinámica de bingo digital, combinando la tecnología con el entretenimiento. Esta actividad creó un ambiente de diversión, sana competencia y convivencia entre los participantes, quienes disfrutaron de una experiencia interactiva llena de emoción y expectativa con cada número anunciado.",
+    "estado": "publicado",
+    "autoras": [
+        "ange@blog.com"
+    ],
+    "portada": "CBDTk38E3JxJUBSTtoNMu0OvgBgHo7MqJjGMtPDY.jpg",
+    "galeria": [
+        {
+            "archivo": "zhgqkcFBOIAzagxeo77dTz58kA2ltMpeCnn8CwgU.jpg",
+            "descripcion": "Cartón de bingo digital utilizado durante la actividad, donde los participantes disfrutaron de una experiencia interactiva que combinó tecnología, emoción y sana competencia."
+        }
+    ],
+    "evidencias": [
+        {
+            "archivo": "r9SM5NMdxVxzF4HFSnHOrNVJq0TMZpjkfdNFpRcM.jpg",
+            "autora": "ange@blog.com",
+            "tipo": "fotografia",
+            "descripcion": "Cartón de juego bingo",
+            "fecha": "2026-11-18"
+        }
+    ]
+}
