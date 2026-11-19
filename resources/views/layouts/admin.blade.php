@@ -25,9 +25,11 @@
                     <a class="nav-link {{ request()->routeIs('dashboard') ? 'active fw-bold' : '' }}" href="{{ route('dashboard') }}">Panel</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('admin.posts.*') ? 'active fw-bold' : '' }}" href="{{ route('admin.posts.index') }}">Entradas</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('admin.categories.*') ? 'active fw-bold' : '' }}" href="{{ route('admin.categories.index') }}">Categorías</a>
                 </li>
-                
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">

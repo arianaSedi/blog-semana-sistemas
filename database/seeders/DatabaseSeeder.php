@@ -5,17 +5,15 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Artisan;
 
 class DatabaseSeeder extends Seeder
 {
     use WithoutModelEvents;
 
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        //CREDENCIALES DE PRUEBA
+        // Credenciales de prueba
         User::updateOrCreate(
             ['email' => 'ari@blog.com'],
             ['name' => 'Ariana', 'password' => 'Semana.2026']
@@ -26,8 +24,15 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Angelica', 'password' => 'Semana.2026']
         );
 
-        // Carga las 7 actividades
+        // Las 7 actividades
         $this->call(CategorySeeder::class);
-    }
 
+        // Entradas exportadas desde el panel (texto, fotos y evidencias)
+        $this->call(PostSeeder::class);
+
+        // Crea public/storage para que las fotos se vean (si no existe)
+        if (! is_link(public_path('storage'))) {
+            Artisan::call('storage:link');
+        }
+    }
 }
