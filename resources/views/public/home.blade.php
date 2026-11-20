@@ -124,8 +124,11 @@
                                     {{ $category->posts_count }} {{ $category->posts_count === 1 ? 'entrada' : 'entradas' }}
                                 </span>
                             </div>
-                            <h3 class="h5 font-display text-uppercase mt-2">{{ $category->name }}</h3>
-                            <p class="small text-white-50 mb-0">{{ $category->description }}</p>
+                            <h3 class="h5 font-display text-uppercase mt-2"> {{ $category->name }} </h3>
+
+                            <p class="small text-white-50 mb-3"> {{ $category->description }} </p>
+
+                            <a href="{{ route('public.category', $category->slug) }}" class="btn btn-primary btn-sm"> Ver publicaciones &rarr; </a>
                         </div>
                     </div>
                 </div>
@@ -151,7 +154,9 @@
                             <p class="small text-uppercase fw-bold text-success mb-1">{{ $post->category->name }}</p>
                             <h3 class="h5 font-display">{{ $post->title }}</h3>
                             <p class="small text-muted mb-2">{{ $post->activity_date->translatedFormat('j \d\e F \d\e Y') }}</p>
-                            <p class="small mb-0">{{ $post->summary() }}</p>
+                            <p class="small mb-3">{{ $post->summary() }}</p>
+
+                            <a href="{{ route('public.post', $post->slug) }}" class="btn btn-primary btn-sm"> Leer publicación &rarr; </a>
                         </div>
                         <div class="card-footer bg-white small text-muted">
                             Por {{ $post->authors->pluck('name')->join(' y ') }}

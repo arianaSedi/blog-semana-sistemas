@@ -1,0 +1,28 @@
+{
+    "titulo": "Primera Ponencia: Investigación aplicada en IoT para la agroindustria en El Salvador",
+    "fecha": "2026-11-16",
+    "categoria": "Ponencias",
+    "categoria_descripcion": "Tema, expositor, ideas centrales y aprendizajes.",
+    "resumen": null,
+    "contenido": "Ponente: Mtro. Omar Otoniel Flores Cortez\r\nFecha: 16 de noviembre de 2026\r\nHora: 10:00 a. m.\r\nLugar: Auditorio 1, Universidad de El Salvador.\r\n\r\nComo parte de las actividades de la Semana de Sistemas 2026, se llevó a cabo la primera ponencia titulada «Investigación aplicada en IoT para la agroindustria en El Salvador», impartida por el Mtro. Omar Otoniel Flores Cortez.\r\n\r\nLa temática estuvo orientada a la aplicación del Internet de las Cosas (IoT) en el sector agroindustrial, destacando el potencial de las tecnologías emergentes para optimizar los procesos productivos, monitorear variables agrícolas, aprovechar eficientemente los recursos y contribuir al desarrollo sostenible del país.",
+    "estado": "publicado",
+    "autoras": [
+        "ange@blog.com"
+    ],
+    "portada": "EuEr9ZtYbpVs9mDa5T8Xfww5u1zWFBAOhTk0tLpP.jpg",
+    "galeria": [
+        {
+            "archivo": "xG9ug9T5wczVvYVhn347wwKLwqNGy1CFz7PhvI5L.jpg",
+            "descripcion": "Aplicación del Internet de las Cosas (IoT) en la agricultura salvadoreña para optimizar los recursos, garantizar la confiabilidad de los datos y mejorar la eficiencia de los procesos agroproductivos."
+        }
+    ],
+    "evidencias": [
+        {
+            "archivo": "7ei8rh1mAzqMgyUxYrTv2jQYG0TveWnrMC1T7dqh.jpg",
+            "autora": "ange@blog.com",
+            "tipo": "fotografia",
+            "descripcion": "Primera Ponencia: Investigación aplicada en IoT para la agroindustria en El Salvador",
+            "fecha": "2026-11-16"
+        }
+    ]
+}
