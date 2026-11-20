@@ -9,7 +9,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&family=montserrat:700,800,900&display=swap" rel="stylesheet">
     @vite(['resources/sass/blog.scss', 'resources/js/blog.js'])
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100" data-bs-spy="scroll" data-bs-target="#menuPublico" data-bs-root-margin="0px 0px -60%">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-marino-oscuro border-bottom border-4 border-primary sticky-top">
     <div class="container">
@@ -24,13 +24,13 @@
         <div class="collapse navbar-collapse" id="menuPublico">
             <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('home') ? 'active fw-bold' : '' }}" href="{{ route('home') }}">Inicio</a>
+                    <a class="nav-link {{ request()->routeIs('home') ? 'active fw-bold' : '' }}" href="{{ route('home') }}#inicio">Inicio</a>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('home') }}#actividades">Actividades</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('home') }}#equipo">Equipo</a></li>
                 <li class="nav-item ms-lg-2">
                     @auth
-                        <a class="btn btn-primary btn-sm px-3" href="{{ route('dashboard') }}">Panel</a>
+                        <a class="btn btn-primary btn-sm px-3" href="{{ route('dashboard') }}">Panel administrativo</a>
                     @else
                         <a class="btn btn-primary btn-sm px-3" href="{{ route('login') }}">Iniciar sesión</a>
                     @endauth

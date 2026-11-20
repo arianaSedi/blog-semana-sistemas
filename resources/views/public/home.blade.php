@@ -4,18 +4,22 @@
 
 @section('content')
 @php
-    // Foto de portada opcional: public/img/portada.jpg
-    $portada = file_exists(public_path('img/portada.jpg')) ? asset('img/portada.jpg') : null;
+    // Fotos de la portada: todas las imágenes de public/img/portada
+    $fotosPortada = collect(glob(public_path('img/portada/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG}'), GLOB_BRACE))
+        ->sort()
+        ->map(fn ($archivo) => asset('img/portada/'.basename($archivo)))
+        ->values();
 @endphp
 
-<section class="bg-marino text-white py-5">
-    <div class="container py-lg-5">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-7">
+<section id="inicio" class="bg-marino text-white position-relative overflow-hidden">
+    {{-- Texto (lado izquierdo) --}}
+    <div class="container position-relative">
+        <div class="row">
+            <div class="col-lg-6 hero-texto">
                 <p class="text-uppercase fw-bold text-lima small mb-2" style="letter-spacing:.2em">
                     Semana de Sistemas 2026 · Green IoT
                 </p>
-                <h1 class="display-4 font-display fw-bolder text-uppercase mb-3">
+                <h1 class="display-4 font-display fw-bolder mb-3">
                     Innovar sin dejar <span class="text-lima">huella de carbono</span>
                 </h1>
                 <p class="lead text-white-50 mb-4">
@@ -28,30 +32,50 @@
                     <a href="#semana" class="btn btn-outline-light btn-lg px-4">Sobre la semana</a>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <div class="col-lg-5">
-                @if ($portada)
-                    <img src="{{ $portada }}" alt="Semana de Sistemas 2026" class="img-fluid rounded-4 shadow-lg"
-                         style="aspect-ratio:4/3; object-fit:cover; width:100%">
-                @else
-                    <div class="border border-2 border-primary rounded-4 p-5 text-center">
-                        <p class="font-display display-3 fw-bolder mb-0">SDS<span class="text-lima">26</span></p>
-                        <p class="text-lima fw-bold text-uppercase mb-3" style="letter-spacing:.3em">Green IoT</p>
-                        <hr class="border-primary opacity-100 w-25 mx-auto">
-                        <p class="small text-white-50 mb-0">Universidad de El Salvador<br>Facultad Multidisciplinaria Oriental</p>
+    {{-- Fotos (lado derecho, de arriba abajo) --}}
+    @if ($fotosPortada->isNotEmpty())
+        <div class="hero-fotos">
+            <div id="carruselPortada" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-inner h-100">
+                    @foreach ($fotosPortada as $foto)
+                        <div class="carousel-item h-100 {{ $loop->first ? 'active' : '' }}">
+                            <img src="{{ $foto }}" alt="Fotografía de la Semana de Sistemas 2026" class="d-block w-100 h-100" style="object-fit: cover;">
+                        </div>
+                    @endforeach
+                </div>
+
+                @if ($fotosPortada->count() > 1)
+                    <div class="carousel-indicators">
+                        @foreach ($fotosPortada as $foto)
+                            <button type="button" data-bs-target="#carruselPortada" data-bs-slide-to="{{ $loop->index }}"
+                                    class="{{ $loop->first ? 'active' : '' }}" aria-label="Foto {{ $loop->iteration }}"></button>
+                        @endforeach
                     </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carruselPortada" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carruselPortada" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
                 @endif
             </div>
         </div>
-    </div>
+    @endif
 </section>
 
 <section id="semana" class="py-5">
     <div class="container">
         <div class="row g-5">
-            <div class="col-lg-4">
+           <div class="col-lg-4 d-flex flex-column">
                 <h2 class="font-display text-uppercase">La Semana de Sistemas 2026</h2>
                 <div class="subrayado-lima mt-2"></div>
+              <img src="{{ asset('img/logo-sds26.png') }}" alt="Logo de la Semana de Sistemas 2026 · Green IoT"
+     class="d-block mt-4 mt-lg-auto align-self-start" style="height: 220px; width: auto;" translate="no">
             </div>
             <div class="col-lg-8">
                 <p>

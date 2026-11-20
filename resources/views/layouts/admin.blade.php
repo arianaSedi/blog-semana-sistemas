@@ -20,7 +20,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="menuAdmin">
-            <ul class="navbar-nav me-auto">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('dashboard') ? 'active fw-bold' : '' }}" href="{{ route('dashboard') }}">Panel</a>
                 </li>
@@ -31,7 +31,7 @@
                     <a class="nav-link {{ request()->routeIs('admin.categories.*') ? 'active fw-bold' : '' }}" href="{{ route('admin.categories.index') }}">Categorías</a>
                 </li>
             </ul>
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ms-lg-3">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ auth()->user()->name }}

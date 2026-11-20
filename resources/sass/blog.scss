@@ -1,43 +1,412 @@
-//PALETA
+// ===== Paleta SDS26 · Green IoT =====
 $marino: #102444;
-$marino-oscuro: #081830;
-$marino-medio: #183058;
+$marino-oscuro: #0B1A33;
+$marino-medio: #1F3864;
 $lima: #79BC26;
-$lima-claro: #93D14A;
-$nube: #F8F8F8;
+$lima-oscuro: #4E7F14;
+$lima-claro: #EEF7E2;
+$fondo: #F5F7FA;
+$borde: #E3E8EF;
+$texto-suave: #5B6B85;
 
-//COLORES QUE TRAE BOOSTRAP
+// ===== Ajustes de Bootstrap =====
 $primary: $lima;
 $secondary: $marino;
-$success: $lima;
+$success: $lima-oscuro;
 $dark: $marino-oscuro;
-$light: $nube;
-$body-bg: $nube;
+$light: $fondo;
+$body-bg: $fondo;
 $body-color: $marino;
-$link-color: $marino;
-$link-hover-color: #548A0C;
+$body-secondary-color: $texto-suave;
+$headings-color: inherit;
+$link-color: $lima-oscuro;
+$link-hover-color: $marino;
+$link-decoration: none;
+$border-color: $borde;
 $color-contrast-dark: $marino-oscuro;
-$min-contrast-ratio: 3;
+$min-contrast-ratio: 2.5;
+$component-active-color: $marino-oscuro;
 
-//TIPOS DE FUETES
-$font-family-sans-serif: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
-$headings-font-family: 'Montserrat', sans-serif;
-$headings-font-weight: 800;
-$border-radius: .75rem;
+// Tipografía
+$font-family-sans-serif: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$headings-font-weight: 700;
+$font-weight-semibold: 600;
+
+// Formas
+$border-radius: .625rem;
+$border-radius-sm: .5rem;
 $border-radius-lg: 1rem;
+$border-radius-xl: 1.25rem;
 $btn-border-radius: 50rem;
 $btn-border-radius-sm: 50rem;
 $btn-border-radius-lg: 50rem;
-$btn-font-weight: 700;
+$btn-font-weight: 600;
+$btn-padding-x: 1.25rem;
+$input-border-color: $borde;
 $input-focus-border-color: $lima;
+$input-focus-box-shadow: 0 0 0 .2rem rgba($lima, .2);
+$card-border-color: $borde;
+$card-cap-bg: #fff;
+$box-shadow-sm: 0 1px 2px rgba($marino, .06);
+$table-th-font-weight: 600;
 
 @import 'bootstrap/scss/bootstrap';
 
-.bg-marino        { background-color: $marino !important; }
-.bg-marino-oscuro { background-color: $marino-oscuro !important; }
-.bg-marino-medio  { background-color: $marino-medio !important; }
-.text-lima        { color: $lima-claro !important; }
-.text-marino      { color: $marino !important; }
-.font-display     { font-family: $headings-font-family; }
-.subrayado-lima   { width: 5rem; height: .35rem; border-radius: 1rem; background: $lima; }
+// ===== Base =====
 html { scroll-behavior: smooth; }
+body { -webkit-font-smoothing: antialiased; }
+h1, h2, h3, .fw-heavy { letter-spacing: -.02em; }
+
+.bg-marino { background-color: $marino !important; }
+.bg-marino-oscuro { background-color: $marino-oscuro !important; }
+.bg-lima-claro { background-color: $lima-claro !important; }
+.text-lima { color: $lima !important; }
+.text-lima-oscuro { color: $lima-oscuro !important; }
+.text-suave { color: $texto-suave !important; }
+.min-w-0 { min-width: 0; }
+
+// Compatibilidad con las vistas actuales del panel
+.font-display { font-weight: 800; letter-spacing: -.02em; }
+.font-display.text-uppercase { text-transform: none !important; }
+.subrayado-lima { width: 3rem; height: .3rem; border-radius: 1rem; background: $lima; }
+
+// Texto pequeño sobre los títulos
+.eyebrow {
+    display: inline-block;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: $lima-oscuro;
+}
+
+// ===== Barra de navegación pública =====
+.navbar-sds {
+    background: rgba(#fff, .95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid $borde;
+
+    .nav-link {
+        color: $marino;
+        font-weight: 500;
+        padding: .5rem .9rem !important;
+        border-radius: 50rem;
+
+        &:hover { background: $fondo; }
+        &.active { color: $lima-oscuro; font-weight: 700; }
+    }
+}
+
+.marca {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    font-weight: 800;
+    color: $marino;
+    letter-spacing: -.02em;
+
+    .marca-punto {
+        width: .75rem;
+        height: .75rem;
+        border-radius: 50%;
+        background: $lima;
+        box-shadow: 0 0 0 4px rgba($lima, .2);
+    }
+}
+
+// ===== Portada =====
+.hero {
+    position: relative;
+    background: $marino-oscuro;
+    color: #fff;
+    overflow: hidden;
+
+    .hero-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: .3;
+    }
+
+    .hero-contenido {
+        position: relative;
+        padding: 6rem 0 7rem;
+    }
+
+    h1 {
+        font-weight: 800;
+        font-size: clamp(2.2rem, 5vw, 3.8rem);
+        line-height: 1.08;
+        letter-spacing: -.03em;
+    }
+}
+
+.franja-datos {
+    position: relative;
+    margin-top: -3.5rem;
+    z-index: 2;
+}
+
+.dato {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    color: $marino;
+}
+
+// ===== Tarjetas =====
+.tarjeta {
+    background: #fff;
+    border: 1px solid $borde;
+    border-radius: $border-radius-lg;
+}
+
+.tarjeta-link {
+    transition: transform .15s ease, box-shadow .15s ease;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 28px rgba($marino, .08);
+    }
+}
+
+.post-card {
+    overflow: hidden;
+    color: $marino;
+
+    .post-card-img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        background: $lima-claro;
+    }
+
+    &:hover { color: $marino; }
+    &:hover h3 { color: $lima-oscuro; }
+}
+
+.etiqueta {
+    display: inline-block;
+    padding: .3rem .75rem;
+    border-radius: 50rem;
+    background: $lima-claro;
+    color: $lima-oscuro;
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+// Filtros tipo píldora
+.chip {
+    display: inline-block;
+    padding: .45rem 1rem;
+    border-radius: 50rem;
+    border: 1px solid $borde;
+    background: #fff;
+    color: $marino;
+    font-size: .9rem;
+    font-weight: 500;
+    white-space: nowrap;
+
+    &:hover { border-color: $lima; color: $marino; }
+    &.active { background: $marino; border-color: $marino; color: #fff; }
+}
+
+// ===== Detalle de entrada =====
+.portada-entrada {
+    width: 100%;
+    max-height: 520px;
+    object-fit: cover;
+    border-radius: $border-radius-xl;
+}
+
+.prose {
+    font-size: 1.08rem;
+    line-height: 1.85;
+
+    p { margin-bottom: 1.3rem; }
+}
+
+.foto-galeria {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: $border-radius;
+    cursor: zoom-in;
+    transition: opacity .15s ease;
+
+    &:hover { opacity: .85; }
+}
+
+// ===== Pie de página =====
+.footer-sds {
+    background: $marino-oscuro;
+    color: rgba(#fff, .65);
+
+    a { color: rgba(#fff, .85); }
+    a:hover { color: $lima; }
+}
+
+// ===== Panel administrativo =====
+.navbar-admin {
+    background: $marino;
+
+    .nav-link {
+        color: rgba(#fff, .75);
+        font-weight: 500;
+        padding: .45rem .95rem !important;
+        border-radius: 50rem;
+
+        &:hover { color: #fff; background: rgba(#fff, .08); }
+        &.active { color: $marino-oscuro; background: $lima; font-weight: 700; }
+    }
+
+    .marca { color: #fff; }
+}
+
+// Tablas claras en el panel
+.table > thead.table-dark {
+    --bs-table-bg: #{$fondo};
+    --bs-table-color: #{$texto-suave};
+    --bs-table-border-color: #{$borde};
+}
+
+.table > thead th {
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.table > :not(caption) > * > * { padding: .8rem 1rem; }
+
+// Estados con punto de color
+.estado {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    font-size: .85rem;
+    font-weight: 600;
+
+    &::before {
+        content: '';
+        width: .5rem;
+        height: .5rem;
+        border-radius: 50%;
+        background: currentColor;
+    }
+
+    &.ok { color: $lima-oscuro; }
+    &.pendiente { color: #B26B00; }
+    &.falta { color: #C0392B; }
+    &.vacio { color: $texto-suave; }
+}
+
+// ===== Login =====
+.login-lateral {
+    background: $marino-oscuro;
+    color: #fff;
+}
+
+// ===== Opciones de la barra de navegación (sitio y panel) =====
+.navbar-dark {
+    --bs-navbar-nav-link-padding-x: .95rem;
+    --bs-nav-link-padding-y: .45rem;
+
+    .navbar-nav {
+        gap: .25rem;
+
+        .nav-link {
+            position: relative;
+            border-radius: 50rem;
+            transition: color .15s ease;
+
+            // Rayita verde (oculta por defecto)
+            &::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: -2px;
+                width: 1.5rem;
+                height: 3px;
+                border-radius: 3px;
+                background-color: $lima;
+                transform: translateX(-50%) scaleX(0);
+                transition: transform .2s ease, opacity .2s ease;
+            }
+
+            // Al pasar el mouse: texto blanco y rayita suave
+            &:hover,
+            &:focus-visible,
+            &.show {
+                color: #fff;
+
+                &::after {
+                    transform: translateX(-50%) scaleX(1);
+                    opacity: .5;
+                }
+            }
+
+            // Opción actual: blanco, negrita y rayita completa
+            &.active {
+                color: #fff;
+                font-weight: 700;
+
+                &::after {
+                    transform: translateX(-50%) scaleX(1);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+// Deja espacio para la barra fija al bajar a una sección
+section[id] {
+    scroll-margin-top: 5rem;
+}
+
+// ===== Portada con fotos a la derecha =====
+.hero-texto {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+// En celular: fotos debajo del texto
+.hero-fotos {
+    position: relative;
+    height: 320px;
+
+    // Degradado que funde la foto con el azul
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background: linear-gradient(to bottom, $marino 0%, rgba($marino, 0) 25%);
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next,
+    .carousel-indicators {
+        z-index: 2;
+    }
+}
+
+// En computadora: fotos a la derecha, de arriba abajo
+@include media-breakpoint-up(lg) {
+    .hero-fotos {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 45%;
+        height: auto;
+
+        &::before {
+            background: linear-gradient(to right, $marino 0%, rgba($marino, 0) 30%);
+        }
+    }
+}
