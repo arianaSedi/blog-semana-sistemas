@@ -174,40 +174,65 @@
     </div>
 </section>
 
-<section id="equipo" class="py-5 bg-white">
-    <div class="container">
-        <h2 class="font-display text-uppercase">Nuestro equipo</h2>
-        <div class="subrayado-lima mt-2 mb-2"></div>
-        <p class="text-muted mb-4">
-            Estudiantes de Ingeniería de Sistemas Informáticos · Facultad Multidisciplinaria Oriental
-        </p>
+<section id="equipo" class="seccion-equipo py-5">
+    <div class="container py-lg-4">
 
+        {{-- Encabezado --}}
+        <div class="text-center mb-5">
+            <p class="text-lima-oscuro text-uppercase fw-bold small mb-2" style="letter-spacing:.2em">Quiénes escriben</p>
+            <h2 class="display-6 fw-bold mb-3">Nuestro equipo</h2>
+            <p class="text-muted mb-0">
+                Estudiantes de Ingeniería de Sistemas Informáticos · Facultad Multidisciplinaria Oriental
+            </p>
+        </div>
+
+        {{-- Integrantes --}}
         <div class="row g-4 justify-content-center">
             @foreach ([
-                ['Ariana Sedillo', 'SF22015', 'img/equipo/ariana.jpeg'],
-                ['Angélica Amaya', 'AP22010', 'img/equipo/angelica.jpeg'],
-            ] as [$nombre, $carnet, $foto])
+                ['nombre' => 'Ariana Sedillo', 'carnet' => 'SF22015', 'correo' => 'ari@blog.com',
+                 'foto' => 'img/equipo/ariana.jpeg', 'rol' => 'Desarrollo y diseño'],
+                ['nombre' => 'Angélica Amaya', 'carnet' => 'AP22010', 'correo' => 'ange@blog.com',
+                 'foto' => 'img/equipo/angelica.jpeg', 'rol' => 'Contenido y evidencias'],
+            ] as $persona)
+                @php $datos = $equipo[$persona['correo']] ?? null; @endphp
+
                 <div class="col-sm-6 col-lg-4">
-                    <div class="h-100 bg-nube border-top border-4 border-primary rounded-3 p-4 text-center">
-                        @if (file_exists(public_path($foto)))
-                            <img src="{{ asset($foto) }}" alt="Foto de {{ $nombre }}"
-                                 class="rounded-circle border border-4 border-white shadow-sm mb-3"
-                                 style="width:130px; height:130px; object-fit:cover">
+                    <div class="tarjeta-equipo h-100 text-center p-4 p-lg-5">
+
+                        @if (file_exists(public_path($persona['foto'])))
+                            <img src="{{ asset($persona['foto']) }}" alt="Foto de {{ $persona['nombre'] }}" class="foto-equipo mb-4">
                         @else
-                            <div class="rounded-circle bg-marino text-white d-inline-flex align-items-center justify-content-center font-display fw-bolder fs-1 border border-4 border-white shadow-sm mb-3"
-                                 style="width:130px; height:130px">
-                                {{ mb_substr($nombre, 0, 1) }}{{ mb_substr(explode(' ', $nombre)[1] ?? '', 0, 1) }}
+                            <div class="foto-equipo foto-equipo-vacia mb-4">
+                                {{ mb_substr($persona['nombre'], 0, 1) }}
                             </div>
                         @endif
-                        <h3 class="h5 font-display mb-1">{{ $nombre }}</h3>
-                        <p class="text-muted small mb-0">Carnet: {{ $carnet }}</p>
+
+                        <h3 class="h4 fw-bold mb-1">{{ $persona['nombre'] }}</h3>
+                        <p class="text-muted small mb-3">Carnet {{ $persona['carnet'] }}</p>
+                        <span class="rol-equipo">{{ $persona['rol'] }}</span>
+
+                        <div class="row g-2 mt-4">
+                            <div class="col-6">
+                                <div class="dato-equipo">
+                                    <span class="numero">{{ $datos->entradas ?? 0 }}</span>
+                                    <span class="texto">{{ ($datos->entradas ?? 0) === 1 ? 'entrada' : 'entradas' }}</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="dato-equipo">
+                                    <span class="numero">{{ $datos->evidencias ?? 0 }}</span>
+                                    <span class="texto">{{ ($datos->evidencias ?? 0) === 1 ? 'evidencia' : 'evidencias' }}</span>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             @endforeach
         </div>
 
-        <p class="text-center text-muted small mt-4 mb-0">
-            Proyecto práctico de <strong>Técnicas de Programación para Internet</strong> · Universidad de El Salvador
+        <p class="text-center text-muted small mt-5 mb-0">
+            Proyecto práctico de <strong >Técnicas de Programación para Internet</strong> · Universidad de El Salvador
         </p>
     </div>
 </section>

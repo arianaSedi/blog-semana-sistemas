@@ -410,3 +410,142 @@ section[id] {
         }
     }
 }
+
+// ===== Sección del equipo =====
+// Para cambiar el fondo, edita solo esta línea:
+//   $lima-claro  -> verde muy suave (recomendado)
+//   #EEF2F7      -> gris azulado muy suave
+//   #FFFFFF      -> blanco
+.seccion-equipo {
+    background-color: $lima-claro;
+}
+
+.tarjeta-equipo {
+    background-color: #fff;
+    border: 1px solid $borde;
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 16px rgba($marino, .05);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        border-color: $lima;
+        box-shadow: 0 14px 30px rgba($marino, .1);
+    }
+}
+
+// Foto redonda con anillo verde
+.foto-equipo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    outline: 4px solid $lima;
+    outline-offset: 5px;
+}
+
+.foto-equipo-vacia {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $marino;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+// Etiqueta del rol
+.rol-equipo {
+    display: inline-block;
+    padding: .35rem .9rem;
+    border-radius: 50rem;
+    background-color: $lima-claro;
+    color: $lima-oscuro;
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+// Cajitas de cifras
+.dato-equipo {
+    display: flex;
+    flex-direction: column;
+    padding: .75rem;
+    border-radius: .75rem;
+    background-color: $fondo;
+
+    .numero {
+        font-size: 1.6rem;
+        font-weight: 800;
+        line-height: 1;
+        color: $marino;
+    }
+
+    .texto {
+        margin-top: .3rem;
+        font-size: .8rem;
+        color: $texto-suave;
+    }
+}
+
+// ===== Panel: tarjetas de cifras =====
+.tarjeta-cifra {
+    position: relative;
+    overflow: hidden;
+
+    // Franja de color a la izquierda
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 5px;
+        background-color: var(--acento, #{$lima});
+    }
+}
+
+// Barra de avance general
+.barra-avance {
+    height: .75rem;
+    border-radius: 50rem;
+    background-color: $lima-claro;
+
+    .progress-bar {
+        border-radius: 50rem;
+        background-color: $lima;
+    }
+}
+
+// Tablas del panel
+.tabla-panel {
+    thead th {
+        background-color: $fondo;
+        color: $texto-suave;
+        border-bottom: 1px solid $borde;
+    }
+
+    tbody tr {
+        transition: background-color .15s ease;
+
+        &:hover { background-color: rgba($lima, .06); }
+    }
+
+    td { border-color: $borde; }
+}
+
+.badge-completa {
+    display: inline-block;
+    padding: .15rem .55rem;
+    border-radius: 50rem;
+    background-color: $lima-claro;
+    color: $lima-oscuro;
+    font-size: .7rem;
+    font-weight: 700;
+}
+
+.fila-entrada {
+    border-color: $borde;
+    transition: background-color .15s ease;
+
+    &:hover { background-color: rgba($lima, .06); }
+}
