@@ -1,0 +1,48 @@
+{
+    "titulo": "Expo System 2026",
+    "fecha": "2026-11-19",
+    "categoria": "Feria de proyectos",
+    "categoria_descripcion": "Proyectos visitados, tecnologías e innovación.",
+    "resumen": "Recorrimos la Expo System en el edificio Minerva y conocimos proyectos de estudiantes de la carrera, desde apps móviles hasta sistemas web y juegos.",
+    "contenido": "Descripción\r\nLa Expo System fue el jueves 19 de noviembre, de 8:00 a. m. a 12:00 m., en el edificio Minerva de la universidad. Estudiantes de distintos años presentaron sus proyectos, y nosotras recorrimos los stands tomando nota de cada uno.\r\n\r\nProyectos visitados\r\nBlog académico de TSI: un blog hecho en Google Sites. Lo presentaron Daniela Abigail y Jessica Esmeralda.\r\n\r\nSistema de presencia por edificios: presentado por Carlos Mario Martínez, Karen Marjorie Beltrami Amaya, Francisco Emmanuel Pérez Ordóñez y Engelbert Alighieri Lobos Alfaro.\r\n\r\nSistema colector de fútbol: una plataforma con minijuegos como penales contra la máquina, fútbol de cabezones, uno contra uno y adivinar el jugador. Se puede elegir cualquier selección, tiene un sistema de apuestas para ganar partidos y un gacha para obtener figuras aleatorias. La información la traen desde una API. Lo presentaron Yeferson Constanza, Juan Granados, Josué Hernández y Kevin Villalta.\r\n\r\nPunto de venta y administración financiera: presentado por Carlos Manuel, Cristian Ventura, César Zuleta y Yeferson de la Cruz.\r\n\r\nBasta: una aplicación móvil del juego Basta, también conocido como Bachillerato o Stop. Lo desarrollaron Marlon Alemán, Diego Flores y Diana Espinal.\r\n\r\nReporte ciudadano: una aplicación movil donde los usuarios reportan situaciones de la ciudad, como fugas o acumulaciones de agua, y votan para saber si ya se tomó acción.\r\n\r\nTecnologías\r\nVimos tecnologías muy variadas: Google Sites; JavaScript, HTML, el framework Astro y PostgreSQL en el colector de fútbol; Laravel y PHP en el punto de venta; y Android Studio con Java en Reporte ciudadano.\r\n\r\nInnovación\r\nLo que más nos llamó la atención fue Reporte ciudadano, porque usa la participación de las personas para atender problemas reales de la ciudad y un juego llamado \"Basta\" que es como un bachillerato Stop. Ver los proyectos de otros compañeros nos motivó a pensar en lo que podríamos presentar en un próximo año.",
+    "estado": "publicado",
+    "autoras": [
+        "ari@blog.com"
+    ],
+    "portada": "VcTmdZtxiqeMGS1LzyFXSk3fXmHIvb4bM68newQV.jpg",
+    "galeria": [
+        {
+            "archivo": "AynlNcqhKY2oyaHGBqbAzl3CZNeJmiZ22C76bVKm.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "hB7IV6RwoPQsuLTJpLGajQcFk1QLCCpS30eVqcsT.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "4bQExdqOA1tS9tXwH1gWNSUlT97uD5JucHiKJpqS.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "tKpYumLWOXj63YWXcReqwIEp1To7uULl2yia5B98.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "2cKL6T6lqlzbwMODVoJmiOrNhorffPd6DINpUc9a.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "UYlfmsgCrCsjaGZqtYr7dceoGJSxhnnH5WF1PZl6.jpg",
+            "descripcion": null
+        }
+    ],
+    "evidencias": [
+        {
+            "archivo": "m0fUvaA9oJySD7zWh8gYE5LSIUDOEiqeCjkrkLI1.jpg",
+            "autora": "ari@blog.com",
+            "tipo": "registro",
+            "descripcion": "Yo participé como parte de la organización, apoyando con el traslado de los equipos y la asignación de los espacios.",
+            "fecha": "2026-11-19"
+        }
+    ]
+}

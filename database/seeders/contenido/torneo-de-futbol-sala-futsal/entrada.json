@@ -20,5 +20,13 @@
             "descripcion": "Estudiantes en un encuentro deportivo"
         }
     ],
-    "evidencias": []
+    "evidencias": [
+        {
+            "archivo": "Bp4uuwKpZMtJjLl7BwHFFjUTlJusmEEBZ8bsL9w4.jpg",
+            "autora": "ange@blog.com",
+            "tipo": "fotografia",
+            "descripcion": "Por estar en la parrillada, no pudimos estar mucho tiempo en el Futsal",
+            "fecha": "2026-11-20"
+        }
+    ]
 }

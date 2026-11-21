@@ -16,5 +16,13 @@
             "descripcion": "Este taller permitió comprender la importancia del análisis del consumo energético y las emisiones de carbono mediante Electricity Maps."
         }
     ],
-    "evidencias": []
+    "evidencias": [
+        {
+            "archivo": "bUtPZYZjLWrzq27b2w6kTZYsQjMdTdQwDZh9sV5r.jpg",
+            "autora": "ange@blog.com",
+            "tipo": "fotografia",
+            "descripcion": "Lo ultimo del taller",
+            "fecha": "2026-11-17"
+        }
+    ]
 }

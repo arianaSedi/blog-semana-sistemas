@@ -1,0 +1,36 @@
+{
+    "titulo": "Ponencia 3",
+    "fecha": "2026-11-17",
+    "categoria": "Ponencias",
+    "categoria_descripcion": "Tema, expositor, ideas centrales y aprendizajes.",
+    "resumen": "El Ing. Naúm Alexander Sánchez Cruz mostró cómo la automatización y el IoT ayudan a controlar mejor los procesos.",
+    "contenido": "Tema\r\nEficiencia energética, optimización de recursos y sostenibilidad aplicada a soluciones tecnológicas.\r\n\r\nExpositor\r\nIng. Naúm Alexander Sánchez Cruz. Martes 17 de noviembre, a las 8:30 a. m.\r\n\r\nIdeas centrales\r\nHabló de la automatización como la forma de pasar a controlar mejor un proceso. Dejó claro que el IoT no solo es Arduino, y explicó cómo interactúan las máquinas en un sistema real en tres partes:\r\n\r\n1. Unidades VRF, en la percepción.\r\n2. Gateway BACnet, en la comunicación.\r\n3. API en .NET, en el procesamiento.\r\n\r\nAprendizajes\r\nMe sirvió ver un ejemplo real de cómo se conectan las partes de un sistema IoT, desde el equipo que mide hasta la API que procesa los datos. Antes asociaba el IoT casi solo con Arduino, y me di cuenta de que se usa con tecnologías que también vemos en la carrera, como .NET.",
+    "estado": "publicado",
+    "autoras": [
+        "ari@blog.com"
+    ],
+    "portada": "TGtM8kXxqesOMUBSGAUQqxEekFX2W0nNBNpUSnMD.jpg",
+    "galeria": [
+        {
+            "archivo": "OuIAgiTxHT75kUSeYtPdZvnWDu44H0DxvJLvyQSF.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "zEL7zzRDZP2xtR0aYwH9KkiygwA5478GA4DL5IrZ.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "tumjjTNVgrebURWFK5Jzj7o3b8zLJcpkS8HV7Srb.jpg",
+            "descripcion": null
+        }
+    ],
+    "evidencias": [
+        {
+            "archivo": "iQqfLmGRiWa5N8QGjuCiXRCcLXXzOvm1GY5IZDHY.jpg",
+            "autora": "ari@blog.com",
+            "tipo": "fotografia",
+            "descripcion": "Foto durante la Ponencia 3",
+            "fecha": "2026-11-17"
+        }
+    ]
+}

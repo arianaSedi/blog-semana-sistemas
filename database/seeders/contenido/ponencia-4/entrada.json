@@ -1,0 +1,52 @@
+{
+    "titulo": "Ponencia 4",
+    "fecha": "2026-11-17",
+    "categoria": "Ponencias",
+    "categoria_descripcion": "Tema, expositor, ideas centrales y aprendizajes.",
+    "resumen": "Victoria Rivas y Edwin Umaña hablaron sobre cómo proteger la información y los sistemas frente a las amenazas digitales.",
+    "contenido": "Tema\r\nCiberseguridad.\r\n\r\nExpositores\r\nVictoria Rivas y Edwin Umaña. Martes 17 de noviembre, a las 10:00 a. m., en el Auditorio 1.\r\n\r\nIdeas centrales\r\nLa ponencia estuvo dividida entre los dos expositores. Victoria Rivas explicó qué es el phishing y cómo evitarlo. Después, Edwin Umaña mostró un ejemplos de phishing y nos dio consejos para no entrar a enlaces maliciosos y revisar si un sitio o correo es legítimo antes de abrirlo.\r\n\r\nAprendizajes\r\nMe sirvió ver el ejemplo en vivo, porque un enlace falso puede verse muy parecido al real. Ahora reviso más el enlace y quién me lo envía antes de abrirlo, y entiendo que como futuros ingenieros también nos toca pensar en la seguridad de lo que desarrollamos.",
+    "estado": "publicado",
+    "autoras": [
+        "ari@blog.com"
+    ],
+    "portada": "JDNtAyx6oPUMmruUyDAqXGRMXpM7ugcYmSDYlKiC.jpg",
+    "galeria": [
+        {
+            "archivo": "PZzzVamkd12zWvA5HHoOpIRwWgZgaE1FHK6RirSv.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "iIP41KYJyD8MFlbtfjUcc1pRY8ATgjWuHn9iUAsm.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "Pjlppr3gpX70bSKKqVShvbRgaMBG71yRulnZjGxa.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "gcgoAVPR9yZiwTKt2sZAsWZimekFrrPKmIKVBuUo.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "zmtU7HQuteS5jBfif8fueG0t1t1AVfWt9qMHb5pG.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "ZJKxpNS6bRyioWVxs32JGo3alicBxl1XYvDosGaY.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "d6wHQ75RlXOo1FFIb9RhYwGC9Kj2tyGTwQTw6UxC.jpg",
+            "descripcion": null
+        }
+    ],
+    "evidencias": [
+        {
+            "archivo": "Ric2gE4YEus6atCUKGIUW8uIdyf5ZjGIxpA2cUnh.jpg",
+            "autora": "ari@blog.com",
+            "tipo": "fotografia",
+            "descripcion": "Foto de un ataque cibernetico en tiempo real",
+            "fecha": "2026-11-17"
+        }
+    ]
+}

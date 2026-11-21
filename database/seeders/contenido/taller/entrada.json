@@ -1,0 +1,40 @@
+{
+    "titulo": "Taller",
+    "fecha": "2026-11-17",
+    "categoria": "Talleres",
+    "categoria_descripcion": "Herramientas, procedimiento, práctica y resultados.",
+    "resumen": "Taller  dado por Josue Gonzalez, donde aprendimos a leer datos de Electricity Maps y a calcular las emisiones de CO₂ de una tarea según la zona y la hora.",
+    "contenido": "Tema\r\nSostenibilidad digital y análisis energético mediante Electricity Maps.\r\n\r\nFacilitador\r\nBachiller José González. Martes 17 de noviembre, en el Auditorio 1. De 1:00 pm a 4:00 pm.\r\n\r\nHerramientas\r\nElectricity Maps, para consultar la intensidad de carbono y la mezcla eléctrica de cada zona, y Electricity Lab, una plataforma con un playground para hacer consultas a la API y ver la respuesta en JSON.\r\n\r\nProcedimiento\r\nPrimero vimos la base: infraestructura y Green IoT, emisiones y mezcla eléctrica, la diferencia entre potencia y energía. Luego nos enseñó dónde leer cada dato en Electricity Maps: el mapa con la capa de intensidad de carbono, el selector de fecha y hora, los indicadores de sostenibilidad y la potencia por fuente.\r\n\r\nDespués comparamos zonas y horas. En el ejemplo, El Salvador tenía 160 g/kWh y Guatemala 410 g/kWh, así que una misma tarea de 0,50 kWh genera 80 g de CO₂ en El Salvador y 205 g en Guatemala.\r\n\r\nResultados\r\nAprendí que la misma tarea no contamina igual en todos lados ni a cualquier hora, porque depende de cómo se genera la electricidad en ese momento. Me pareció útil porque con datos reales se puede decidir cuándo conviene hacer un proceso para que gaste menos energía.",
+    "estado": "publicado",
+    "autoras": [
+        "ari@blog.com"
+    ],
+    "portada": "LDrQUnsbTGScAGMDJ7c31pHiuSFLUDBN6FWVyAPs.jpg",
+    "galeria": [
+        {
+            "archivo": "RnPD9nlKJbCTPUgQlFjDMaVttqVCFCWTdU6ppd6U.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "4jMOQH5BhCvWHCXg5WYy26aSZTKOb188NIUHRUnW.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "j8vSd1RRZd6Fu8QR76cMdkpJed0pj3bOFl5ZBK8P.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "P0APqZAvog6XLYHgJxnQjt5Hf6tTmqNrdAA71zcg.jpg",
+            "descripcion": null
+        }
+    ],
+    "evidencias": [
+        {
+            "archivo": "UWeudLQFLJ2JMvVwvdSiirlbeZiASC8FutecoQ7o.jpg",
+            "autora": "ari@blog.com",
+            "tipo": "fotografia",
+            "descripcion": "Ejemplo donde se comparan zonas",
+            "fecha": "2026-11-17"
+        }
+    ]
+}

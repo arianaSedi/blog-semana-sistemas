@@ -1,0 +1,36 @@
+{
+    "titulo": "Ponencia 2",
+    "fecha": "2026-11-16",
+    "categoria": "Ponencias",
+    "categoria_descripcion": "Tema, expositor, ideas centrales y aprendizajes.",
+    "resumen": "El Dr. Carlos Osmín Pocasangre Jiménez habló sobre el aumento del consumo de energía y cómo el IoT ayuda a medirlo.",
+    "contenido": "Tema\r\nEnergías alternativas y eficiencia energética.\r\n\r\nExpositor\r\nDr. Carlos Osmín Pocasangre Jiménez. Lunes 16 de noviembre, a partir de la 1:00 p. m.\r\n\r\nIdeas centrales\r\nUno de los primeros puntos que presentó fue que la inteligencia artificial disparó el consumo global de energía, por eso hoy es tan importante buscar energías alternativas y usar la energía de forma más eficiente.\r\n\r\nTambién explicó que el secreto del IoT se resume en tres pasos: medir, transferir y almacenar. Es decir, primero se toman los datos con sensores, luego se envían y al final se guardan para poder analizarlos.\r\n\r\nAprendizajes\r\nNo había pensado en que la IA, que usamos todos los días, gasta tanta energía. Me quedó la idea de que como futuros ingenieros también tenemos que pensar en cuánto consumen los sistemas que creamos, no solo en que funcionen.",
+    "estado": "publicado",
+    "autoras": [
+        "ari@blog.com"
+    ],
+    "portada": "UtWmcAE3s5HknEkC5o1fFpcg3ssVkCmqP4eQAT3d.jpg",
+    "galeria": [
+        {
+            "archivo": "GI3JkkGWmLno2XPhkjseCfVI5uxprxnYGxC22CMg.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "cRotVKwnl7Wq5nknzuSF7UAo71Swz45ysK9XDW6C.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "KnYFXsmX7vj2UgwBN1GMdMEud4KVFvrWYc7nH3Ok.jpg",
+            "descripcion": null
+        }
+    ],
+    "evidencias": [
+        {
+            "archivo": "vsbwYfYesiwIP090bFViGx8NtsSH38O1l3FkQ22G.jpg",
+            "autora": "ari@blog.com",
+            "tipo": "fotografia",
+            "descripcion": "Conclusion de la Ponencia 2",
+            "fecha": "2026-11-16"
+        }
+    ]
+}

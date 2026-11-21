@@ -1,0 +1,48 @@
+{
+    "titulo": "Ponencia 1",
+    "fecha": "2026-11-16",
+    "categoria": "Ponencias",
+    "categoria_descripcion": "Tema, expositor, ideas centrales y aprendizajes.",
+    "resumen": "El maestro Omar Otoniel Flores Cortez nos explicó cómo el IoT puede ayudar al agro salvadoreño a tomar decisiones con datos.",
+    "contenido": "Tema\r\nInvestigación aplicada en IoT para la agroindustria en El Salvador.\r\n\r\nExpositor\r\nMaestro Omar Otoniel Flores Cortez (UTEC). Lunes 16 de noviembre, de 10:00 a 12:00, en el Auditorio 1. La bachiller Joselin Joya le dio la bienvenida leyendo su biografía.\r\n\r\nIdeas centrales\r\nLa idea principal fue que, cuando tengamos la oportunidad de crear sistemas o investigaciones, tomemos en cuenta la tecnología ambiental.\r\n\r\nExplicó que el IoT son dispositivos eléctricos e informáticos que combinan lo eléctrico y lo mecánico para subir información a internet; es una forma de convertir fenómenos físicos en evidencia científica. La primera fase es la percepción, donde los sensores toman las mediciones. Las tres primeras capas son de hardware y las dos últimas de software.\r\n\r\nTambién habló del edge computing (fases 1 y 2), que procesa los datos cerca del entorno y no en la nube, del fog computing (fase 3) y del cloud computing (fases 4 y 5). El protocolo más usado es MQTT, que opera bajo TCP/IP.\r\n\r\nAprendizajes\r\nMe llamó la atención que en El Salvador cerca del 80 % de los agricultores no usa datos para tomar decisiones. La idea es que existan esos datos para que los informáticos los analicen, y para aplicarlo primero hay que identificar el fenómeno y luego parametrizarlo. Me quedó la idea de que lo que estudiamos puede ayudar mucho al agro del país.",
+    "estado": "publicado",
+    "autoras": [
+        "ari@blog.com"
+    ],
+    "portada": "CdFjGmXKigtxg8B4Nbbx1m55kfQi9MFIU5EMvs3W.jpg",
+    "galeria": [
+        {
+            "archivo": "1iuPYoTQ6gisI0ni86s2SdOfxTAQXwo0DIa9mC3b.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "IrYSrSC0sjvLDJ64f19Tma881cml0wh9Qk74WjFn.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "ANFv3Uc3YUl3DAxiy8hxkmvmLzrmtemCDf4z3j5T.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "istjCzTTWXHYVJOw2gCYYGObvkjezsRtvVZ3xXtG.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "JGHh0qSO14IKr0dKixowC6L1IRav0pVSzLQc9X8r.jpg",
+            "descripcion": null
+        },
+        {
+            "archivo": "Pa3yf2yRWe814pUCzr4KbSLyeLzow4neEJrXImEl.jpg",
+            "descripcion": null
+        }
+    ],
+    "evidencias": [
+        {
+            "archivo": "Tso6itbe5fXn3mcZCLzpwu9PGUN0dftNIzJ49UlT.jpg",
+            "autora": "ari@blog.com",
+            "tipo": "fotografia",
+            "descripcion": "Foto con mi compañera antes de entrar a la Ponencia",
+            "fecha": "2026-11-16"
+        }
+    ]
+}
