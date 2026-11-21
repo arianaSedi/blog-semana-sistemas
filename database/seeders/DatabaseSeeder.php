@@ -21,16 +21,16 @@ class DatabaseSeeder extends Seeder
 
         User::updateOrCreate(
             ['email' => 'ange@blog.com'],
-            ['name' => 'Angelica', 'password' => 'Semana.2026']
+            ['name' => 'Angélica', 'password' => 'Semana.2026']
         );
 
         // Las 7 actividades
         $this->call(CategorySeeder::class);
 
-        // Entradas exportadas desde el panel (texto, fotos y evidencias)
+        // Entradas exportadas desde el panel
         $this->call(PostSeeder::class);
 
-        // Crea public/storage para que las fotos se vean (si no existe)
+        // Crea public/storage para que las fotos se vean
         if (! is_link(public_path('storage'))) {
             Artisan::call('storage:link');
         }

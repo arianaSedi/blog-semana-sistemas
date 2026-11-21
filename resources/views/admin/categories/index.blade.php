@@ -34,7 +34,8 @@
                             <a href="{{ route('admin.categories.edit', $category) }}" class="btn btn-sm btn-secondary">Editar</a>
 
                             <form action="{{ route('admin.categories.destroy', $category) }}" method="POST" class="d-inline"
-                                  onsubmit="return confirm('¿Seguro que deseas eliminar la categoría {{ $category->name }}?')">
+                                data-titulo="¿Eliminar la categoría «{{ $category->name }}»?"
+                                  data-confirmar="Esta acción no se puede deshacer.">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-outline-danger"

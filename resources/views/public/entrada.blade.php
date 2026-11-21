@@ -9,7 +9,7 @@
 
         <a href="{{ route('public.category', $post->category->slug) }}"
            class="btn btn-outline-light btn-sm mb-4">
-            &larr; Volver a {{ $post->category->name }}
+            Volver a {{ $post->category->name }}
         </a>
 
         <p class="text-lima fw-bold text-uppercase small">
@@ -113,7 +113,7 @@
                     <div class="mt-5">
                         <a href="{{ route('public.category', $post->category->slug) }}"
                            class="btn btn-primary">
-                            &larr; Ver más publicaciones
+                            Ver más publicaciones
                         </a>
                     </div>
                 </article>

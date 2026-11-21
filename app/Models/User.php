@@ -24,7 +24,7 @@ class User extends Authenticatable
         ];
     }
 
-    // Entradas que registró
+    // Entradas que se registro
     public function createdPosts(): HasMany
     {
         return $this->hasMany(post_model::class, 'user_id');
@@ -36,7 +36,7 @@ class User extends Authenticatable
         return $this->belongsToMany(post_model::class, 'post_user', 'user_id', 'post_id')->withTimestamps();
     }
 
-    // Sus evidencias de asistencia
+    //evidencias de asistencia
     public function evidences(): HasMany
     {
         return $this->hasMany(evidence_model::class, 'user_id');

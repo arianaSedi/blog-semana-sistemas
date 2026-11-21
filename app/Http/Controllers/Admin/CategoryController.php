@@ -19,7 +19,7 @@ class CategoryController extends Controller
         'description.max' => 'La descripción no debe superar 500 caracteres.',
     ];
 
-    // Listado de categorías
+    // Listado de categorias
     public function index()
     {
         $categories = category_model::withCount([
@@ -35,7 +35,7 @@ class CategoryController extends Controller
         return view('admin.categories.create', ['category' => new category_model()]);
     }
 
-    // Guardar nueva categoría
+    // Guardar nueva categoria
     public function store(Request $request)
     {
         $data = $request->validate([
@@ -54,7 +54,6 @@ class CategoryController extends Controller
     public function edit(category_model $category)
     {
         $category->load(['posts' => fn ($q) => $q->orderByDesc('activity_date')]);
-
         return view('admin.categories.edit', compact('category'));
     }
 

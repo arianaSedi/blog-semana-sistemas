@@ -70,7 +70,7 @@ h1, h2, h3, .fw-heavy { letter-spacing: -.02em; }
 .font-display.text-uppercase { text-transform: none !important; }
 .subrayado-lima { width: 3rem; height: .3rem; border-radius: 1rem; background: $lima; }
 
-// Texto pequeño sobre los títulos
+// Texto pequeño sobre los titulos
 .eyebrow {
     display: inline-block;
     font-size: .75rem;
@@ -80,7 +80,7 @@ h1, h2, h3, .fw-heavy { letter-spacing: -.02em; }
     color: $lima-oscuro;
 }
 
-// ===== Barra de navegación pública =====
+// ===== Barra de navegacion pública =====
 .navbar-sds {
     background: rgba(#fff, .95);
     backdrop-filter: blur(8px);
@@ -197,7 +197,7 @@ h1, h2, h3, .fw-heavy { letter-spacing: -.02em; }
     font-weight: 700;
 }
 
-// Filtros tipo píldora
+// Filtros
 .chip {
     display: inline-block;
     padding: .45rem 1rem;
@@ -239,7 +239,7 @@ h1, h2, h3, .fw-heavy { letter-spacing: -.02em; }
     &:hover { opacity: .85; }
 }
 
-// ===== Pie de página =====
+// ===== Footer=====
 .footer-sds {
     background: $marino-oscuro;
     color: rgba(#fff, .65);
@@ -309,7 +309,7 @@ h1, h2, h3, .fw-heavy { letter-spacing: -.02em; }
     color: #fff;
 }
 
-// ===== Opciones de la barra de navegación (sitio y panel) =====
+// ===== Opciones de la barra de navegacion =====
 .navbar-dark {
     --bs-navbar-nav-link-padding-x: .95rem;
     --bs-nav-link-padding-y: .45rem;
@@ -348,7 +348,6 @@ h1, h2, h3, .fw-heavy { letter-spacing: -.02em; }
                 }
             }
 
-            // Opción actual: blanco, negrita y rayita completa
             &.active {
                 color: #fff;
                 font-weight: 700;
@@ -411,11 +410,7 @@ section[id] {
     }
 }
 
-// ===== Sección del equipo =====
-// Para cambiar el fondo, edita solo esta línea:
-//   $lima-claro  -> verde muy suave (recomendado)
-//   #EEF2F7      -> gris azulado muy suave
-//   #FFFFFF      -> blanco
+// ===== Seccion del equipo =====
 .seccion-equipo {
     background-color: $lima-claro;
 }
@@ -438,10 +433,22 @@ section[id] {
 .foto-equipo {
     width: 160px;
     height: 160px;
+    margin-inline: auto;
     border-radius: 50%;
-    object-fit: cover;
+    overflow: hidden;
     outline: 4px solid $lima;
     outline-offset: 5px;
+    background-color: $marino;
+
+    // Acerca la foto a la cara 
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 30%;
+        transform: scale(1.8);
+        transform-origin: 50% 30%;
+    }
 }
 
 .foto-equipo-vacia {
@@ -591,14 +598,12 @@ section[id] {
 
 #contenido, #galeria, #evidencias { scroll-margin-top: 1.5rem; }
 
-// Título de cada bloque
 .encabezado-seccion {
     padding-bottom: 1rem;
     margin-bottom: 1.25rem;
     border-bottom: 1px solid $borde;
 }
 
-// Guía de contenido mínimo
 .guia-contenido {
     padding: .75rem 1rem;
     border-left: 4px solid $lima;
@@ -642,7 +647,6 @@ section[id] {
     #estado-publicado:checked + .btn { background: $lima; color: $marino-oscuro; }
 }
 
-// Autoras
 .chip-autora {
     border: 1px solid $borde;
     border-radius: 50rem;
@@ -692,7 +696,7 @@ section[id] {
     }
 }
 
-// Fotos de la galería
+// Fotos de la galeria
 .foto-admin {
     height: 100%;
     border: 1px solid $borde;
@@ -735,7 +739,7 @@ section[id] {
     font-size: .875rem;
 }
 
-// Evidencias: una columna por integrante
+// Evidencias
 .columna-integrante {
     padding: 1.25rem;
     border: 1px solid $borde;
@@ -781,9 +785,7 @@ section[id] {
     border-top: 1px solid $borde;
 }
 
-// ===== Editar entrada: más color =====
 
-// Banda azul del encabezado
 .cabecera-entrada {
     padding: 1.75rem 2rem 0;
     border-radius: 1.25rem;
@@ -823,7 +825,6 @@ section[id] {
     &.borrador { background: #FFE8B3; color: #7A4F00; }
 }
 
-// Títulos de las tarjetas con franja gris y línea verde
 .tarjeta > .encabezado-seccion:first-child {
     margin: -1.5rem -1.5rem 1.5rem;
     padding: 1rem 1.5rem;
@@ -834,12 +835,11 @@ section[id] {
     box-shadow: inset 4px 0 0 $lima;
 }
 
-// Columnas de evidencias con borde verde arriba
+
 .columna-integrante {
     border-top: 4px solid $lima;
 }
 
-// Conteo verde / rojo
 .conteo {
     display: inline-flex;
     align-items: center;
@@ -861,7 +861,6 @@ section[id] {
     width: fit-content;
 }
 
-// ===== Categorías =====
 .tabla-categorias {
     --bs-table-striped-bg: #{$fondo};
     --bs-table-hover-bg: #{rgba($lima, .12)};
@@ -883,7 +882,7 @@ section[id] {
     color: $lima-oscuro;
 }
 
-// Entradas dentro de Editar categoría
+
 .fila-cat-entrada {
     display: flex;
     align-items: center;
@@ -913,7 +912,6 @@ section[id] {
     .sin-foto { background: $lima-claro; }
 }
 
-// Buscador del listado público
 .buscador-entradas {
     display: flex;
     gap: .5rem;
@@ -924,4 +922,163 @@ section[id] {
     @include media-breakpoint-down(sm) {
         flex-direction: column;
     }
+}
+
+@include media-breakpoint-down(lg) {
+    .navbar-dark .navbar-nav .nav-link {
+        padding-left: 1rem;
+        border-radius: 0;
+
+        &::after {
+            left: 0;
+            top: 50%;
+            bottom: auto;
+            width: 3px;
+            height: 1.25rem;
+            transform: translateY(-50%) scaleY(0);
+        }
+
+        &:hover::after,
+        &:focus-visible::after,
+        &.show::after {
+            transform: translateY(-50%) scaleY(1);
+        }
+
+        &.active::after {
+            transform: translateY(-50%) scaleY(1);
+        }
+    }
+
+    .navbar-dark .navbar-nav .btn {
+        margin: .5rem 0 .75rem 1rem;
+    }
+}
+
+// ===== Login =====
+.login-pantalla {
+    display: grid;
+    min-height: 100vh;
+
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: 1.1fr 1fr;
+    }
+}
+
+// Foto del evento con velo azul
+.login-foto {
+    position: relative;
+    background: $marino center / cover no-repeat;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba($marino-oscuro, .55) 0%, rgba($marino-oscuro, .92) 100%);
+    }
+
+    // Franja verde a la derecha
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 5px;
+        background: $lima;
+    }
+}
+
+.login-foto-contenido {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 3rem;
+}
+
+// Lado del formulario
+.login-formulario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1.5rem;
+    background: $fondo;
+}
+
+.login-caja {
+    width: 100%;
+    max-width: 400px;
+
+    .form-control {
+        background: #fff;
+        border: 1px solid $borde;
+
+        &:focus { border-color: $lima; }
+    }
+}
+
+// Botón "Mostrar" dentro del campo de contraseña
+.campo-clave {
+    position: relative;
+
+    .form-control { padding-right: 5.5rem; }
+}
+
+.btn-ver-clave {
+    position: absolute;
+    top: 50%;
+    right: .75rem;
+    transform: translateY(-50%);
+    padding: .25rem .5rem;
+    border: 0;
+    background: transparent;
+    color: $lima-oscuro;
+    font-size: .85rem;
+    font-weight: 700;
+
+    &:hover { color: $marino; }
+}
+.campo-clave .form-control { padding-right: 3rem; }
+
+.btn-ver-clave {
+    display: flex;
+    align-items: center;
+    color: $texto-suave;
+}
+
+.login-formulario { position: relative; }
+
+.volver-esquina {
+    position: absolute;
+    top: 2rem;
+    right: 2.5rem;
+}
+
+.login-formulario .enlace-volver.volver-esquina::before {
+    content: none !important;
+}
+
+.inicial-usuaria {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    margin-right: .4rem;
+    border-radius: 50%;
+    background: $lima;
+    color: $marino-oscuro;
+    font-size: .85rem;
+    font-weight: 800;
+}
+
+//alerta sweetAlert
+.alerta-sds {
+    font-family: inherit;
+    border-radius: 1.25rem;
+    padding: 2rem 1.5rem 1.75rem;
+
+    .swal2-title { color: $marino; font-size: 1.35rem; }
+    .swal2-html-container { color: $texto-suave; font-size: .95rem; }
 }

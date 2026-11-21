@@ -9,7 +9,7 @@
 
         <a href="{{ route('home') }}#actividades"
            class="btn btn-outline-light btn-sm mb-4">
-            &larr; Volver a actividades
+            Volver a actividades
         </a>
 
         <p class="text-lima text-uppercase fw-bold small">
@@ -80,7 +80,7 @@
                             <div class="mt-auto">
                                 <a href="{{ route('public.post', $post->slug) }}"
                                    class="btn btn-primary btn-sm">
-                                    Leer publicación &rarr;
+                                    Leer publicación &rsaquo;
                                 </a>
                             </div>
 

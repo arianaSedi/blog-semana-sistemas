@@ -24,10 +24,8 @@ class DashboardController extends Controller
 
         $users = User::orderBy('name')->get();
 
-        // Avance por actividad: entradas y evidencias de cada integrante
-        $avance = category_model::withCount([
-            'posts as publicadas' => fn ($q) => $q->where('status', 'publicado'),
-            'posts as borradores' => fn ($q) => $q->where('status', 'borrador'),
+        // Avance por actividad
+        $avance = category_model::withCount(['posts as publicadas' => fn ($q) => $q->where('status', 'publicado'),'posts as borradores' => fn ($q) => $q->where('status', 'borrador'),
         ])
             ->orderBy('name')
             ->get()
@@ -39,9 +37,7 @@ class DashboardController extends Controller
                 ]);
 
                 // Completa = tiene entrada publicada y evidencia de todas las integrantes
-                $categoria->completa = $categoria->publicadas > 0
-                    && $categoria->evidenciasPorUsuaria->every(fn ($n) => $n > 0);
-
+                $categoria->completa = $categoria->publicadas > 0 && $categoria->evidenciasPorUsuaria->every(fn ($n) => $n > 0);
                 return $categoria;
             });
 

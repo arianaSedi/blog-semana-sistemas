@@ -30,21 +30,3 @@
         <a href="{{ route('admin.categories.index') }}" class="btn btn-outline-secondary">Cancelar</a>
     </div>
 </div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Dirección pública mientras se escribe el nombre
-        const nombre = document.getElementById('name');
-        const slug = document.getElementById('vistaSlug');
-        const crearSlug = (texto) => texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-            .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-        nombre.addEventListener('input', () => slug.textContent = crearSlug(nombre.value) || '...');
-
-        // Contador de la descripción
-        const descripcion = document.getElementById('description');
-        const contador = document.getElementById('contadorDescripcion');
-        const contar = () => contador.textContent = descripcion.value.length;
-        descripcion.addEventListener('input', contar);
-        contar();
-    });
-</script>

@@ -72,7 +72,7 @@
                 <h2 class="font-display text-uppercase">La Semana de Sistemas 2026</h2>
                 <div class="subrayado-lima mt-2"></div>
               <img src="{{ asset('img/logo-sds26.png') }}" alt="Logo de la Semana de Sistemas 2026 · Green IoT"
-     class="d-block mt-4 mt-lg-auto align-self-start" style="height: 220px; width: auto;" translate="no">
+          class="d-block mt-4 mt-lg-auto align-self-center align-self-lg-start" style="height: 220px; width: auto;" translate="no">
             </div>
             <div class="col-lg-8">
                 <p>
@@ -125,7 +125,7 @@
 
                             <p class="small text-white-50 mb-3"> {{ $category->description }} </p>
 
-                            <a href="{{ route('public.category', $category->slug) }}" class="btn btn-primary btn-sm"> Ver publicaciones &rarr; </a>
+                                                        <a href="{{ route('public.category', $category->slug) }}" class="btn btn-primary btn-sm">Ver publicaciones &rsaquo;</a>
                         </div>
                     </div>
                 </div>
@@ -158,7 +158,7 @@
                             <p class="small text-muted mb-2">{{ $post->activity_date->translatedFormat('j \d\e F \d\e Y') }}</p>
                             <p class="small mb-3">{{ $post->summary() }}</p>
 
-                            <a href="{{ route('public.post', $post->slug) }}" class="btn btn-primary btn-sm"> Leer publicación &rarr; </a>
+                            <a href="{{ route('public.post', $post->slug) }}" class="btn btn-primary btn-sm"> Leer publicación &rsaquo; </a>
                         </div>
                         <div class="card-footer bg-white small text-muted">
                             Por {{ $post->authors->pluck('name')->join(' y ') }}
@@ -183,16 +183,16 @@
             <p class="text-lima-oscuro text-uppercase fw-bold small mb-2" style="letter-spacing:.2em">Quiénes escriben</p>
             <h2 class="display-6 fw-bold mb-3">Nuestro equipo</h2>
             <p class="text-muted mb-0">
-                Estudiantes de Ingeniería de Sistemas Informáticos · Facultad Multidisciplinaria Oriental
+                Estudiantes de  4.º año de Ingeniería de Sistemas Informáticos en la Universidad de El Salvador, Facultad Multidisciplinaria Oriental
             </p>
         </div>
 
         <div class="row g-4 justify-content-center">
             @foreach ([
-                ['nombre' => 'Ariana Sedillo', 'carnet' => 'SF22015', 'correo' => 'ari@blog.com',
-                 'foto' => 'img/equipo/ariana.jpeg', 'rol' => 'Desarrollo y diseño'],
-                ['nombre' => 'Angélica Amaya', 'carnet' => 'AP22010', 'correo' => 'ange@blog.com',
-                 'foto' => 'img/equipo/angelica.jpeg', 'rol' => 'Contenido y evidencias'],
+                ['nombre' => 'Ariana Jorleny Sedillo Flores', 'carnet' => 'SF22015', 'correo' => 'ari@blog.com',
+                 'foto' => 'img/equipo/ariana.jpeg', 'rol' => 'Parte de la Comisión de Parrillada en SDS 2026'],
+                ['nombre' => 'Angélica Milagro Amaya Pérez', 'carnet' => 'AP22010', 'correo' => 'ange@blog.com',
+                 'foto' => 'img/equipo/angelica.jpeg', 'rol' => 'Parte de la Comisión de Parrillada en SDS 2026'],
             ] as $persona)
                 @php $datos = $equipo[$persona['correo']] ?? null; @endphp
 
@@ -200,7 +200,9 @@
                     <div class="tarjeta-equipo h-100 text-center p-4 p-lg-5">
 
                         @if (file_exists(public_path($persona['foto'])))
-                            <img src="{{ asset($persona['foto']) }}" alt="Foto de {{ $persona['nombre'] }}" class="foto-equipo mb-4">
+                            <div class="foto-equipo mb-4">
+                                <img src="{{ asset($persona['foto']) }}" alt="Foto de {{ $persona['nombre'] }}">
+                            </div>
                         @else
                             <div class="foto-equipo foto-equipo-vacia mb-4">
                                 {{ mb_substr($persona['nombre'], 0, 1) }}
@@ -208,7 +210,7 @@
                         @endif
 
                         <h3 class="h4 fw-bold mb-1">{{ $persona['nombre'] }}</h3>
-                        <p class="text-muted small mb-3">Carnet {{ $persona['carnet'] }}</p>
+                        <p class="text-muted small mb-3">Carnet: {{ $persona['carnet'] }}</p>
                         <span class="rol-equipo">{{ $persona['rol'] }}</span>
 
                         <div class="row g-2 mt-4">

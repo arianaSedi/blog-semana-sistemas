@@ -23,7 +23,7 @@ class PublicController extends Controller
             ->take(3)
             ->get();
 
-        // Integrantes con sus entradas publicadas y evidencias (se buscan por correo)
+        //entradas publicadas y evidencias se buscan por correo
         $equipo = User::withCount([
             'authoredPosts as entradas' => fn ($q) => $q->where('status', 'publicado'),
             'evidences as evidencias',

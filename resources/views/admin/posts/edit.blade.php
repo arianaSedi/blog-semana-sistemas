@@ -40,13 +40,15 @@
         <div class="caja-vacia">Esta entrada todavía no tiene fotos en la galería. Agrégalas en la sección <strong>Imágenes</strong> y guarda.</div>
     @else
         <div class="row g-3">
-            @foreach ($post->images as $image)
+            @foreach ($post->images as $image)                                   
                 <div class="col-6 col-md-4 col-xl-3">
                     <div class="foto-admin">
                         <div class="position-relative">
                             <img src="{{ asset('storage/'.$image->path) }}" alt="{{ $image->caption }}">
                             <form action="{{ route('admin.images.destroy', $image) }}" method="POST"
-                                  onsubmit="return confirm('¿Eliminar esta imagen?')" class="quitar-foto">
+                                  data-titulo="¿Quitar esta foto?"
+                                  data-confirmar="La foto se eliminará de la galería y no se podrá recuperar."
+                                  class="quitar-foto">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-sm">Quitar</button>
@@ -99,8 +101,9 @@
                                 <div class="text-muted">{{ $evidence->evidence_date->format('d/m/Y') }}</div>
                                 <div class="text-truncate">{{ $evidence->description }}</div>
                             </div>
-                            <form action="{{ route('admin.evidences.destroy', $evidence) }}" method="POST"
-                                  onsubmit="return confirm('¿Eliminar esta evidencia?')">
+                                <form action="{{ route('admin.evidences.destroy', $evidence) }}" method="POST" 
+                                    data-titulo="¿Eliminar esta evidencia?"
+                                    data-confirmar="El archivo se borrará y no se podrá recuperar.">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-link btn-sm text-danger p-0">Eliminar</button>

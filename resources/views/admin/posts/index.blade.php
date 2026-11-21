@@ -76,8 +76,9 @@
                         </td>
                         <td class="text-end text-nowrap">
                             <a href="{{ route('admin.posts.edit', $post) }}" class="btn btn-sm btn-secondary">Editar</a>
-                            <form action="{{ route('admin.posts.destroy', $post) }}" method="POST" class="d-inline"
-                                  onsubmit="return confirm('¿Eliminar esta entrada? También se borrarán sus imágenes y evidencias.')">
+                                <form action="{{ route('admin.posts.destroy', $post) }}" method="POST" class="d-inline"
+                                  data-titulo="¿Eliminar «{{ $post->title }}»?"
+                                  data-confirmar="También se borrarán sus fotos y evidencias. Esta acción no se puede deshacer.">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-outline-danger">Eliminar</button>

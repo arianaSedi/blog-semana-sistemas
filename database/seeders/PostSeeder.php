@@ -12,7 +12,7 @@ use Illuminate\Support\Str;
 
 class PostSeeder extends Seeder
 {
-    // Carga las entradas guardadas con: php artisan blog:exportar
+    // Carga las entradas guardadas con php artisan blog:exportar
     public function run(): void
     {
         $origen = database_path('seeders/contenido');

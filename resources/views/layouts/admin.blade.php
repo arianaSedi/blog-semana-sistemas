@@ -31,9 +31,10 @@
                     <a class="nav-link {{ request()->routeIs('admin.categories.*') ? 'active fw-bold' : '' }}" href="{{ route('admin.categories.index') }}">Categorías</a>
                 </li>
             </ul>
-            <ul class="navbar-nav ms-lg-3">
+            <ul class="navbar-nav ms-lg-1">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="inicial-usuaria">{{ mb_substr(auth()->user()->name, 0, 1) }}</span>
                         {{ auth()->user()->name }}
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">

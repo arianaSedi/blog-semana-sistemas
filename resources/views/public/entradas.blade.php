@@ -61,7 +61,7 @@
                             <p class="small text-muted mb-2">{{ $post->activity_date->translatedFormat('j \d\e F \d\e Y') }}</p>
                             <p class="small mb-3">{{ $post->summary() }}</p>
                             <div class="mt-auto">
-                                <a href="{{ route('public.post', $post->slug) }}" class="btn btn-primary btn-sm">Leer publicación &rarr;</a>
+                                <a href="{{ route('public.post', $post->slug) }}" class="btn btn-primary btn-sm">Leer publicación &rsaquo;</a>
                             </div>
                         </div>
                         <div class="card-footer bg-white small text-muted">
