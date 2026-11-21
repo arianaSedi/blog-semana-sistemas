@@ -549,3 +549,379 @@ section[id] {
 
     &:hover { background-color: rgba($lima, .06); }
 }
+
+// ===== Editar / Nueva entrada =====
+.enlace-volver {
+    font-size: .875rem;
+    font-weight: 600;
+    color: $texto-suave;
+    text-decoration: none;
+
+    &::before { content: '\2190'; margin-right: .4rem; } // flecha izquierda
+    &:hover { color: $marino; }
+}
+
+// Barra de secciones (Contenido, Galería, Evidencias)
+.subnav-entrada {
+    display: flex;
+    gap: 1.75rem;
+    border-bottom: 1px solid $borde;
+    overflow-x: auto;
+
+    a {
+        padding: .6rem 0;
+        margin-bottom: -1px;
+        border-bottom: 3px solid transparent;
+        color: $texto-suave;
+        font-weight: 600;
+        text-decoration: none;
+        white-space: nowrap;
+
+        span {
+            margin-left: .3rem;
+            padding: .05rem .45rem;
+            border-radius: 50rem;
+            background: $fondo;
+            font-size: .75rem;
+        }
+
+        &:hover { color: $marino; border-bottom-color: $lima; }
+    }
+}
+
+#contenido, #galeria, #evidencias { scroll-margin-top: 1.5rem; }
+
+// Título de cada bloque
+.encabezado-seccion {
+    padding-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid $borde;
+}
+
+// Guía de contenido mínimo
+.guia-contenido {
+    padding: .75rem 1rem;
+    border-left: 4px solid $lima;
+    border-radius: .5rem;
+    background: $lima-claro;
+    color: $marino;
+    font-size: .875rem;
+}
+
+// Columna lateral fija al bajar
+.lateral-fija {
+    @include media-breakpoint-up(lg) {
+        position: sticky;
+        top: 1.5rem;
+    }
+}
+
+// Estado: Borrador / Publicado
+.selector-estado {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: .25rem;
+    gap: .25rem;
+    border-radius: 50rem;
+    background: $fondo;
+    border: 1px solid $borde;
+
+    .btn {
+        border: 0;
+        border-radius: 50rem;
+        font-weight: 600;
+        color: $texto-suave;
+    }
+
+    .btn-check:checked + .btn {
+        background: #fff;
+        color: $marino;
+        box-shadow: 0 1px 3px rgba($marino, .15);
+    }
+
+    #estado-publicado:checked + .btn { background: $lima; color: $marino-oscuro; }
+}
+
+// Autoras
+.chip-autora {
+    border: 1px solid $borde;
+    border-radius: 50rem;
+    font-size: .875rem;
+    font-weight: 600;
+    color: $texto-suave;
+    background: #fff;
+
+    &:hover { border-color: $lima; color: $marino; }
+}
+
+.btn-check:checked + .chip-autora {
+    background: $lima-claro;
+    border-color: $lima;
+    color: $lima-oscuro;
+}
+
+// Vista previa de la portada
+.zona-portada {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16 / 9;
+    border: 2px dashed $borde;
+    border-radius: .75rem;
+    background: $fondo;
+    overflow: hidden;
+    color: $texto-suave;
+    font-size: .875rem;
+
+    img { width: 100%; height: 100%; object-fit: cover; }
+}
+
+// Vista previa de las fotos nuevas
+.vista-galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .4rem;
+
+    &:not(:empty) { margin-top: .6rem; }
+
+    img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: .4rem;
+    }
+}
+
+// Fotos de la galería
+.foto-admin {
+    height: 100%;
+    border: 1px solid $borde;
+    border-radius: .75rem;
+    overflow: hidden;
+    background: #fff;
+
+    img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+    }
+}
+
+.quitar-foto {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+
+    .btn {
+        padding: .15rem .6rem;
+        border-radius: 50rem;
+        background: rgba(#fff, .92);
+        color: #B42318;
+        font-size: .75rem;
+        font-weight: 700;
+
+        &:hover { background: #B42318; color: #fff; }
+    }
+}
+
+// Caja para cuando no hay nada
+.caja-vacia {
+    padding: 1.25rem;
+    border: 2px dashed $borde;
+    border-radius: .75rem;
+    text-align: center;
+    color: $texto-suave;
+    font-size: .875rem;
+}
+
+// Evidencias: una columna por integrante
+.columna-integrante {
+    padding: 1.25rem;
+    border: 1px solid $borde;
+    border-radius: 1rem;
+    background: $fondo;
+}
+
+.fila-evidencia {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .6rem;
+    margin-bottom: .6rem;
+    border-radius: .75rem;
+    background: #fff;
+    border: 1px solid $borde;
+
+    img {
+        width: 56px;
+        height: 56px;
+        object-fit: cover;
+        border-radius: .5rem;
+    }
+}
+
+.miniatura-pdf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: .5rem;
+    background: $marino;
+    color: #fff;
+    font-size: .75rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.form-evidencia {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid $borde;
+}
+
+// ===== Editar entrada: más color =====
+
+// Banda azul del encabezado
+.cabecera-entrada {
+    padding: 1.75rem 2rem 0;
+    border-radius: 1.25rem;
+    background: linear-gradient(135deg, $marino-oscuro, $marino-medio);
+    color: rgba(#fff, .75);
+
+    .enlace-volver {
+        color: rgba(#fff, .7);
+        &:hover { color: #fff; }
+    }
+
+    // Pestañas dentro de la banda
+    .subnav-entrada {
+        margin-top: 1.5rem;
+        border-bottom: 0;
+        border-top: 1px solid rgba(#fff, .12);
+
+        a {
+            padding: .9rem 0;
+            color: rgba(#fff, .7);
+
+            span { background: rgba(#fff, .14); color: #fff; }
+
+            &:hover { color: #fff; border-bottom-color: $lima; }
+        }
+    }
+}
+
+// Estado como etiqueta
+.estado-pill {
+    padding: .2rem .75rem;
+    border-radius: 50rem;
+    font-weight: 700;
+    font-size: .75rem;
+
+    &.publicado { background: $lima; color: $marino-oscuro; }
+    &.borrador { background: #FFE8B3; color: #7A4F00; }
+}
+
+// Títulos de las tarjetas con franja gris y línea verde
+.tarjeta > .encabezado-seccion:first-child {
+    margin: -1.5rem -1.5rem 1.5rem;
+    padding: 1rem 1.5rem;
+    background: $fondo;
+    border-bottom: 1px solid $borde;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    box-shadow: inset 4px 0 0 $lima;
+}
+
+// Columnas de evidencias con borde verde arriba
+.columna-integrante {
+    border-top: 4px solid $lima;
+}
+
+// Conteo verde / rojo
+.conteo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: .65rem;
+    font-weight: 800;
+    font-size: 1rem;
+    flex-shrink: 0;
+
+    &.ok { background-color: $lima-claro; color: $lima-oscuro; }
+    &.falta { background-color: #FDECEA; color: #B42318; }
+}
+
+
+.enlace-volver {
+    display: block;
+    width: fit-content;
+}
+
+// ===== Categorías =====
+.tabla-categorias {
+    --bs-table-striped-bg: #{$fondo};
+    --bs-table-hover-bg: #{rgba($lima, .12)};
+
+    > thead th {
+        background-color: $marino;
+        color: #fff;
+        border-bottom: 0;
+        font-size: .75rem;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+    }
+
+    td { border-color: $borde; }
+}
+
+.num-categoria {
+    font-weight: 800;
+    color: $lima-oscuro;
+}
+
+// Entradas dentro de Editar categoría
+.fila-cat-entrada {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .65rem;
+    margin-bottom: .5rem;
+    border: 1px solid $borde;
+    border-radius: .75rem;
+    color: $marino;
+    text-decoration: none;
+    transition: background-color .15s ease, border-color .15s ease;
+
+    &:hover {
+        background: rgba($lima, .08);
+        border-color: $lima;
+        color: $marino;
+    }
+
+    img, .sin-foto {
+        width: 56px;
+        height: 42px;
+        border-radius: .5rem;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+
+    .sin-foto { background: $lima-claro; }
+}
+
+// Buscador del listado público
+.buscador-entradas {
+    display: flex;
+    gap: .5rem;
+    max-width: 640px;
+
+    .form-control { border: 0; }
+
+    @include media-breakpoint-down(sm) {
+        flex-direction: column;
+    }
+}

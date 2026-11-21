@@ -4,7 +4,6 @@
 
 @section('content')
 @php
-    // Fotos de la portada: todas las imágenes de public/img/portada
     $fotosPortada = collect(glob(public_path('img/portada/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG}'), GLOB_BRACE))
         ->sort()
         ->map(fn ($archivo) => asset('img/portada/'.basename($archivo)))
@@ -12,15 +11,14 @@
 @endphp
 
 <section id="inicio" class="bg-marino text-white position-relative overflow-hidden">
-    {{-- Texto (lado izquierdo) --}}
     <div class="container position-relative">
         <div class="row">
             <div class="col-lg-6 hero-texto">
-                <p class="text-uppercase fw-bold text-lima small mb-2" style="letter-spacing:.2em">
-                    Semana de Sistemas 2026 · Green IoT
+                <p class="text-uppercase fw-bold text-lima fs-5 mb-2" style="letter-spacing:.15em">
+                    Innovar sin dejar huella de carbono  Green IoT
                 </p>
                 <h1 class="display-4 font-display fw-bolder mb-3">
-                    Innovar sin dejar <span class="text-lima">huella de carbono</span>
+                    Blog de la Semana<span class="text-lima"> de Sistemas 2026</span>
                 </h1>
                 <p class="lead text-white-50 mb-4">
                     En este blog contamos cómo vivimos cada actividad de la Semana de Sistemas 2026
@@ -35,7 +33,6 @@
         </div>
     </div>
 
-    {{-- Fotos (lado derecho, de arriba abajo) --}}
     @if ($fotosPortada->isNotEmpty())
         <div class="hero-fotos">
             <div id="carruselPortada" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-interval="5000">
@@ -139,8 +136,13 @@
 
 <section class="py-5">
     <div class="container">
-        <h2 class="font-display text-uppercase">Últimas entradas</h2>
-        <div class="subrayado-lima mt-2 mb-4"></div>
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-2">
+            <div>
+                <h2 class="font-display text-uppercase">Últimas entradas</h2>
+                <div class="subrayado-lima mt-2 mb-4"></div>
+            </div>
+            <a href="{{ route('public.posts') }}" class="btn btn-outline-secondary mb-4">Ver todas las entradas</a>
+        </div>
 
         <div class="row g-4">
             @forelse ($latest as $post)
@@ -177,7 +179,6 @@
 <section id="equipo" class="seccion-equipo py-5">
     <div class="container py-lg-4">
 
-        {{-- Encabezado --}}
         <div class="text-center mb-5">
             <p class="text-lima-oscuro text-uppercase fw-bold small mb-2" style="letter-spacing:.2em">Quiénes escriben</p>
             <h2 class="display-6 fw-bold mb-3">Nuestro equipo</h2>
@@ -186,7 +187,6 @@
             </p>
         </div>
 
-        {{-- Integrantes --}}
         <div class="row g-4 justify-content-center">
             @foreach ([
                 ['nombre' => 'Ariana Sedillo', 'carnet' => 'SF22015', 'correo' => 'ari@blog.com',
@@ -231,9 +231,6 @@
             @endforeach
         </div>
 
-        <p class="text-center text-muted small mt-5 mb-0">
-            Proyecto práctico de <strong >Técnicas de Programación para Internet</strong> · Universidad de El Salvador
-        </p>
     </div>
 </section>
 @endsection

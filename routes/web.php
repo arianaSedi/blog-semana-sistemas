@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 // MODULO PUBLICO
 Route::get('/', [PublicController::class, 'home'])->name('home');
 
+Route::get('/entradas', [PublicController::class, 'index'])->name('public.posts');
+
 Route::get('/categorias/{slug}', [PublicController::class, 'category']) ->name('public.category');
 
 Route::get('/entradas/{slug}', [PublicController::class, 'show']) ->name('public.post');

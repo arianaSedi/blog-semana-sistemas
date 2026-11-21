@@ -45,20 +45,15 @@
             <div class="col-lg-10">
 
                 <article class="bg-white rounded-4 shadow-sm p-3 p-md-5">
-
-                    {{-- Imagen principal --}}
                     @if ($post->cover_image)
-
                         <img
                             src="{{ asset('storage/'.$post->cover_image) }}"
                             alt="{{ $post->title }}"
                             class="img-fluid rounded-3 w-100 mb-4"
-                            style="max-height:550px; object-fit:contain;"
-                        >
+                            style="max-height:550px; object-fit:contain;">
 
                     @endif
 
-                    {{-- Resumen --}}
                     @if ($post->excerpt)
 
                         <div class="border-start border-4 border-primary ps-3 mb-4">
@@ -68,17 +63,14 @@
                         </div>
 
                     @endif
-
-                    {{-- Contenido completo --}}
                     <h2 class="h4 font-display mb-3">
                         Sobre la actividad
                     </h2>
 
                     <div style="white-space:pre-wrap; line-height:1.9; overflow-wrap:anywhere;">{{ $post->content }}</div>
 
-                    {{-- Galería de fotografías --}}
+            
                     @if ($post->images->isNotEmpty())
-
                         <hr class="my-5">
 
                         <h2 class="font-display text-uppercase">
@@ -92,21 +84,17 @@
                             @foreach ($post->images as $image)
 
                                 <div class="col-md-6 col-lg-4">
-
                                     <figure class="h-100">
 
-                                        <a
-                                            href="{{ asset('storage/'.$image->path) }}"
+                                        <a href="{{ asset('storage/'.$image->path) }}"
                                             target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
+                                            rel="noopener noreferrer">
                                             <img
                                                 src="{{ asset('storage/'.$image->path) }}"
                                                 alt="{{ $image->caption ?: $post->title }}"
                                                 class="img-fluid rounded-3 shadow-sm w-100"
                                                 style="aspect-ratio:4/3; object-fit:cover;"
-                                                loading="lazy"
-                                            >
+                                                loading="lazy">
                                         </a>
 
                                         @if ($image->caption)
@@ -118,29 +106,19 @@
                                         @endif
 
                                     </figure>
-
                                 </div>
-
                             @endforeach
-
                         </div>
-
                     @endif
-
                     <div class="mt-5">
-
                         <a href="{{ route('public.category', $post->category->slug) }}"
                            class="btn btn-primary">
                             &larr; Ver más publicaciones
                         </a>
-
                     </div>
-
                 </article>
-
             </div>
         </div>
-
     </div>
 </section>
 

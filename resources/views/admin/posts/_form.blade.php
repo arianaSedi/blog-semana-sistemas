@@ -1,53 +1,73 @@
 @php
     $autorasMarcadas = old('authors', $post->exists ? $post->authors->pluck('id')->all() : [auth()->id()]);
+    $estadoActual = old('status', $post->status);
 @endphp
 
-<div class="row g-4">
+<div class="row g-4 align-items-start">
+    {{-- Columna principal --}}
     <div class="col-lg-8">
-        <div class="card border-0 shadow-sm">
-            <div class="card-body p-4">
-                <div class="mb-3">
-                    <label for="title" class="form-label fw-semibold">Título *</label>
-                    <input type="text" id="title" name="title" maxlength="200"
-                           value="{{ old('title', $post->title) }}"
-                           class="form-control @error('title') is-invalid @enderror">
-                    @error('title') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                </div>
+        <div class="tarjeta p-4 mb-4">
+            <div class="encabezado-seccion">
+                <h2 class="h6 fw-bold mb-1">Información general</h2>
+            </div>
 
-                <div class="mb-3">
-                    <label for="excerpt" class="form-label fw-semibold">Resumen <small class="text-muted fw-normal">(opcional, se muestra en el listado)</small></label>
-                    <input type="text" id="excerpt" name="excerpt" maxlength="300"
-                           value="{{ old('excerpt', $post->excerpt) }}"
-                           class="form-control @error('excerpt') is-invalid @enderror">
-                    @error('excerpt') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                </div>
+            <div class="mb-3">
+                <label for="title" class="form-label fw-semibold">Título *</label>
+                <input type="text" id="title" name="title" maxlength="200"
+                       value="{{ old('title', $post->title) }}"
+                       class="form-control form-control-lg @error('title') is-invalid @enderror"
+                       placeholder="Ej.: Taller de sensores IoT con Arduino">
+                @error('title') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
 
-                <div>
-                    <label for="content" class="form-label fw-semibold">Contenido *</label>
-                    <div id="guia" class="alert alert-success small py-2 mb-2">
-                        Describe hechos reales e incluye una reflexión propia.
-                    </div>
-                    <textarea id="content" name="content" rows="14"
-                              class="form-control @error('content') is-invalid @enderror">{{ old('content', $post->content) }}</textarea>
-                    <div class="form-text">Mínimo 100 caracteres. Deja una línea en blanco para separar párrafos.</div>
-                    @error('content') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                </div>
+            <div>
+                <label for="excerpt" class="form-label fw-semibold">Resumen <span class="text-muted fw-normal small">(opcional)</span></label>
+                <textarea id="excerpt" name="excerpt" maxlength="300" rows="2"
+                          class="form-control @error('excerpt') is-invalid @enderror"
+                          placeholder="Una o dos oraciones que se muestran en las tarjetas del blog.">{{ old('excerpt', $post->excerpt) }}</textarea>
+                <div class="form-text text-end"><span id="contadorResumen">0</span> / 300</div>
+                @error('excerpt') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+        </div>
+
+        <div class="tarjeta p-4">
+            <div class="encabezado-seccion">
+                <h2 class="h6 fw-bold mb-1">Contenido de la entrada</h2>
+            </div>
+
+            <div class="guia-contenido mb-3">
+                <span class="fw-bold">Contenido mínimo:</span>
+                <span id="guiaTexto">Selecciona una categoría para ver lo que debe incluir.</span>
+            </div>
+
+            <textarea id="content" name="content" rows="16"
+                      class="form-control @error('content') is-invalid @enderror">{{ old('content', $post->content) }}</textarea>
+            @error('content') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            <div class="d-flex flex-wrap justify-content-between gap-2 form-text">
+                <span>Deja una línea en blanco para separar párrafos.</span>
+                <span id="contadorContenido" class="fw-semibold">0 caracteres · mínimo 100</span>
             </div>
         </div>
     </div>
 
+    {{-- Columna lateral --}}
     <div class="col-lg-4">
-        <div class="card border-0 shadow-sm mb-4">
-            <div class="card-body p-4">
-                <div class="mb-3">
-                    <label for="status" class="form-label fw-semibold">Estado *</label>
-                    <select id="status" name="status" class="form-select @error('status') is-invalid @enderror">
-                        @foreach (\App\Models\post_model::STATUSES as $valor => $texto)
-                            <option value="{{ $valor }}" @selected(old('status', $post->status) === $valor)>{{ $texto }}</option>
-                        @endforeach
-                    </select>
-                    <div class="form-text">Los borradores no se muestran en el blog público.</div>
+        <div class="lateral-fija">
+            <div class="tarjeta p-4 mb-4">
+                <div class="encabezado-seccion">
+                    <h2 class="h6 fw-bold mb-0">Publicación</h2>
                 </div>
+
+                <p class="form-label fw-semibold mb-2">Estado *</p>
+                <div class="selector-estado mb-1">
+                    @foreach (\App\Models\post_model::STATUSES as $valor => $texto)
+                        <input type="radio" class="btn-check" name="status" id="estado-{{ $valor }}"
+                               value="{{ $valor }}" @checked($estadoActual === $valor)>
+                        <label class="btn" for="estado-{{ $valor }}">{{ $texto }}</label>
+                    @endforeach
+                </div>
+                <div class="form-text mb-3">Los borradores no se muestran en el blog público.</div>
+                @error('status') <div class="text-danger small mb-3">{{ $message }}</div> @enderror
 
                 <div class="mb-3">
                     <label for="category_id" class="form-label fw-semibold">Categoría *</label>
@@ -69,63 +89,106 @@
                     @error('activity_date') <div class="invalid-feedback">{{ $message }}</div> @enderror
                 </div>
 
-                <div>
-                    <p class="form-label fw-semibold mb-1">Autoras *</p>
+                <p class="form-label fw-semibold mb-2">Autoras *</p>
+                <div class="d-flex flex-wrap gap-2">
                     @foreach ($users as $user)
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="authors[]" value="{{ $user->id }}"
-                                   id="autora{{ $user->id }}" @checked(in_array($user->id, $autorasMarcadas))>
-                            <label class="form-check-label" for="autora{{ $user->id }}">{{ $user->name }}</label>
-                        </div>
+                        <input class="btn-check" type="checkbox" name="authors[]" value="{{ $user->id }}"
+                               id="autora{{ $user->id }}" @checked(in_array($user->id, $autorasMarcadas))>
+                        <label class="btn chip-autora" for="autora{{ $user->id }}">{{ $user->name }}</label>
                     @endforeach
-                    @error('authors') <div class="text-danger small mt-1">{{ $message }}</div> @enderror
+                </div>
+                @error('authors') <div class="text-danger small mt-2">{{ $message }}</div> @enderror
+
+                <hr class="my-4">
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">{{ $post->exists ? 'Guardar cambios' : 'Crear entrada' }}</button>
+                    <a href="{{ route('admin.posts.index') }}" class="btn btn-outline-secondary">Cancelar</a>
                 </div>
             </div>
-        </div>
 
-        <div class="card border-0 shadow-sm mb-4">
-            <div class="card-body p-4">
-                <div class="mb-3">
-                    <label for="cover_image" class="form-label fw-semibold">Imagen principal {{ $post->exists ? '' : '*' }}</label>
+            <div class="tarjeta p-4">
+                <div class="encabezado-seccion">
+                    <h2 class="h6 fw-bold mb-0">Imágenes</h2>
+                </div>
+
+                <label for="cover_image" class="form-label fw-semibold">Imagen principal {{ $post->exists ? '' : '*' }}</label>
+                <div id="vistaPortada" class="zona-portada mb-2">
                     @if ($post->cover_image)
-                        <img src="{{ asset('storage/'.$post->cover_image) }}" alt="Imagen actual" class="img-fluid rounded mb-2">
-                        <div class="form-text mb-1">Sube otra solo si quieres reemplazarla.</div>
+                        <img src="{{ asset('storage/'.$post->cover_image) }}" alt="Imagen principal actual">
+                    @else
+                        <span>Sin imagen seleccionada</span>
                     @endif
-                    <input type="file" id="cover_image" name="cover_image" accept="image/*"
-                           class="form-control @error('cover_image') is-invalid @enderror">
-                    @error('cover_image') <div class="invalid-feedback">{{ $message }}</div> @enderror
                 </div>
+                <input type="file" id="cover_image" name="cover_image" accept="image/*"
+                       class="form-control form-control-sm @error('cover_image') is-invalid @enderror">
+                @error('cover_image') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                @if ($post->cover_image)
+                    <div class="form-text">Sube otra solo si quieres reemplazarla.</div>
+                @endif
 
-                <div>
-                    <label for="gallery" class="form-label fw-semibold">Agregar imágenes a la galería</label>
-                    <input type="file" id="gallery" name="gallery[]" accept="image/*" multiple
-                           class="form-control @error('gallery') is-invalid @enderror @error('gallery.*') is-invalid @enderror">
-                    <div class="form-text">Puedes seleccionar varias a la vez (máximo 5 MB cada una).</div>
-                    @error('gallery') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                    @error('gallery.*') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                </div>
+                <label for="gallery" class="form-label fw-semibold mt-4">Agregar a la galería</label>
+                <input type="file" id="gallery" name="gallery[]" accept="image/*" multiple
+                       class="form-control form-control-sm @error('gallery') is-invalid @enderror @error('gallery.*') is-invalid @enderror">
+                @error('gallery') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                @error('gallery.*') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                <div id="vistaGaleria" class="vista-galeria"></div>
+                <div class="form-text">Puedes elegir varias a la vez (máximo 5 MB cada una). Se suben al guardar.</div>
             </div>
-        </div>
-
-        <div class="d-grid gap-2">
-            <button type="submit" class="btn btn-primary">{{ $post->exists ? 'Guardar cambios' : 'Crear entrada' }}</button>
-            <a href="{{ route('admin.posts.index') }}" class="btn btn-outline-secondary">Cancelar</a>
         </div>
     </div>
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+        // Guía de contenido mínimo según la categoría
         const categoria = document.getElementById('category_id');
-        const guia = document.getElementById('guia');
-        const textoBase = guia.textContent.trim();
-
-        const actualizar = () => {
+        const guia = document.getElementById('guiaTexto');
+        const actualizarGuia = () => {
             const minimo = categoria.selectedOptions[0]?.dataset.guia;
-            guia.textContent = minimo ? `${textoBase} Contenido mínimo: ${minimo}` : textoBase;
+            guia.textContent = minimo || 'Selecciona una categoría para ver lo que debe incluir.';
         };
+        categoria.addEventListener('change', actualizarGuia);
+        actualizarGuia();
 
-        categoria.addEventListener('change', actualizar);
-        actualizar();
+        // Contadores de caracteres
+        const contenido = document.getElementById('content');
+        const contador = document.getElementById('contadorContenido');
+        const contarContenido = () => {
+            const n = contenido.value.trim().length;
+            contador.textContent = `${n} caracteres · mínimo 100`;
+            contador.classList.toggle('text-lima-oscuro', n >= 100);
+            contador.classList.toggle('text-danger', n > 0 && n < 100);
+        };
+        contenido.addEventListener('input', contarContenido);
+        contarContenido();
+
+        const resumen = document.getElementById('excerpt');
+        const contadorResumen = document.getElementById('contadorResumen');
+        const contarResumen = () => contadorResumen.textContent = resumen.value.length;
+        resumen.addEventListener('input', contarResumen);
+        contarResumen();
+
+        // Vista previa de la imagen principal
+        document.getElementById('cover_image').addEventListener('change', (e) => {
+            const archivo = e.target.files[0];
+            if (!archivo) return;
+            const img = document.createElement('img');
+            img.src = URL.createObjectURL(archivo);
+            img.alt = 'Vista previa';
+            document.getElementById('vistaPortada').replaceChildren(img);
+        });
+
+        // Vista previa de las fotos nuevas de la galería
+        document.getElementById('gallery').addEventListener('change', (e) => {
+            const contenedor = document.getElementById('vistaGaleria');
+            contenedor.replaceChildren();
+            [...e.target.files].forEach((archivo) => {
+                const img = document.createElement('img');
+                img.src = URL.createObjectURL(archivo);
+                img.alt = '';
+                contenedor.appendChild(img);
+            });
+        });
     });
 </script>

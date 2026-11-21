@@ -22,11 +22,13 @@ class CategoryController extends Controller
     // Listado de categorías
     public function index()
     {
-        $categories = category_model::withCount('posts')->orderBy('name')->get();
+        $categories = category_model::withCount([
+            'posts',
+            'posts as publicadas' => fn ($q) => $q->where('status', 'publicado'),
+        ])->orderBy('name')->get();
 
         return view('admin.categories.index', compact('categories'));
     }
-
     // Formulario para crear
     public function create()
     {
@@ -51,6 +53,8 @@ class CategoryController extends Controller
     // Formulario para editar
     public function edit(category_model $category)
     {
+        $category->load(['posts' => fn ($q) => $q->orderByDesc('activity_date')]);
+
         return view('admin.categories.edit', compact('category'));
     }
 
