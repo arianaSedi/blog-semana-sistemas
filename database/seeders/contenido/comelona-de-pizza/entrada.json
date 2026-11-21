@@ -1,0 +1,32 @@
+{
+    "titulo": "Comelona de Pizza",
+    "fecha": "2026-11-19",
+    "categoria": "Comelona de pizza",
+    "categoria_descripcion": "Desarrollo, convivencia y experiencia.",
+    "resumen": null,
+    "contenido": "Como parte de las actividades recreativas de la Semana de Sistemas 2026, se realizó una emocionante competencia de comelona de pizza, en la que seis participantes aceptaron el desafío de comerse una pizza entera en tan solo 15 minutos.\r\n\r\nEsta divertida dinámica estuvo llena de emoción, risas y entusiasmo, creando un ambiente de sana competencia y convivencia entre los estudiantes. ¡Un reto donde el apetito, la rapidez y la diversión fueron los protagonistas!",
+    "estado": "publicado",
+    "autoras": [
+        "ange@blog.com"
+    ],
+    "portada": "Dv3Nz4Fy1Ept1pxnhqO4vVFw2RpIRX9XPFttWwVm.jpg",
+    "galeria": [
+        {
+            "archivo": "dFmQDW8U8u7jhzCfwhFlN9dh0iuJFiO02EByW5xy.jpg",
+            "descripcion": "Los seis participantes se enfrentaron al divertido reto de comer una pizza entera en tan solo 15 minutos, mientras sus compañeros los animaban con entusiasmo, risas y aplausos."
+        },
+        {
+            "archivo": "cOTwhrZUYupcBKoqFrygKiFY9tviGLv3GLT1kRs3.jpg",
+            "descripcion": "Después de una emocionante competencia llena de risas, entusiasmo y mucha pizza, el Ing. Guandique se coronó como el gran ganador del desafío, demostrando su rapidez."
+        }
+    ],
+    "evidencias": [
+        {
+            "archivo": "rsu3xCCH68xORti0FTefCsNwPbiGZMxyUkxp8jST.jpg",
+            "autora": "ange@blog.com",
+            "tipo": "fotografia",
+            "descripcion": "Comelona de Pizza",
+            "fecha": "2026-11-19"
+        }
+    ]
+}

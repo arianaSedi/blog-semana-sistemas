@@ -1,0 +1,36 @@
+{
+    "titulo": "Cuarta Ponencia: Ciberseguridad",
+    "fecha": "2026-11-17",
+    "categoria": "Ponencias",
+    "categoria_descripcion": "Tema, expositor, ideas centrales y aprendizajes.",
+    "resumen": null,
+    "contenido": "Ponente: Victoria Rivas\r\nFecha: Martes 17 de noviembre de 2026\r\nHora: 10:00 a. m.\r\nLugar: Auditorio 1, Universidad de El Salvador.\r\n\r\nComo parte de las actividades de la Semana de Sistemas 2026, se desarrolló la cuarta ponencia, dedicada a la ciberseguridad, impartida por Victoria Rivas.\r\n\r\nLa temática estuvo enfocada en la importancia de proteger la información y los sistemas tecnológicos frente a las amenazas digitales, destacando la necesidad de implementar buenas prácticas de seguridad para prevenir ataques informáticos, proteger los datos personales y garantizar un uso seguro de la tecnología.\r\n\r\nEsta ponencia representó un espacio de aprendizaje y reflexión sobre los desafíos de la seguridad informática en la actualidad, resaltando la responsabilidad de los futuros profesionales de la tecnología en la construcción de entornos digitales más seguros y confiables.",
+    "estado": "publicado",
+    "autoras": [
+        "ange@blog.com"
+    ],
+    "portada": "l1ejMUYqlb8dOk1JS0u4IpfgdsF83O3gp3t8IanF.jpg",
+    "galeria": [
+        {
+            "archivo": "64pePG8y1t42Tue6ps79DXKAigun6KPJjX7Vv5KY.jpg",
+            "descripcion": "Se abordaron los riesgos del phishing y los deepfakes, destacando la importancia de verificar los remitentes, evitar enlaces sospechosos y proteger la información personal."
+        },
+        {
+            "archivo": "0wruAtWi0DLwgUH9pxoE472XpALjW2OjayoxCuIe.jpg",
+            "descripcion": "Durante la cuarta ponencia de ciberseguridad, Edwin Umaña realizó una demostración práctica para ejemplificar cómo pueden ocurrir los ataques informáticos y poner en riesgo la información personal."
+        },
+        {
+            "archivo": "d9vG9dhhdhjn2XuTe3qTAPU3OPVnVP7kYSZUeskp.jpg",
+            "descripcion": "La demostración permitió comprender lo rápido que puede ocurrir un ciberataque y la importancia de estar preparados para prevenir amenazas digitales, proteger nuestra información y actuar a tiempo."
+        }
+    ],
+    "evidencias": [
+        {
+            "archivo": "uJnR6GURTl5iW32ev63tKAYsIyTwdmmaX16ASGqe.jpg",
+            "autora": "ange@blog.com",
+            "tipo": "fotografia",
+            "descripcion": "Cuarta Ponencia",
+            "fecha": "2026-11-17"
+        }
+    ]
+}

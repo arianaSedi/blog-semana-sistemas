@@ -1,0 +1,44 @@
+{
+    "titulo": "Expo System",
+    "fecha": "2026-11-19",
+    "categoria": "Feria de proyectos",
+    "categoria_descripcion": "Proyectos visitados, tecnologías e innovación.",
+    "resumen": null,
+    "contenido": "EXPO SYSTEM\r\nUna actividad donde distintos estudiantes de los diferentes años presentaron sus mejores proyectos al público.",
+    "estado": "publicado",
+    "autoras": [
+        "ange@blog.com"
+    ],
+    "portada": "w7aPCUZLUEY69Urah2dHRVuqCBJubKpDLx4eQ9fo.jpg",
+    "galeria": [
+        {
+            "archivo": "VvLsawvbihxsayT7532W96N7NhbNaV6xzaUut9Nc.jpg",
+            "descripcion": "Las estudiantes Daniela Abigail y Jessica Esmeralda presentaron su proyecto de Blog Académico de Teoría de Sistemas, desarrollado mediante Google Sites."
+        },
+        {
+            "archivo": "4YNtkTDhEdpDDqYgXNEd5UccWAX1dNW8be8ucTcI.jpg",
+            "descripcion": "Los estudiantes Carlos Mario Martínez, Karen Marjorie Beltrami Amaya, Francisco Emmanuel Pérez Ordóñez y Engelbert Alighieri Lobos Alfaro presentaron su proyecto «Sistema de Presencia por Edificios»"
+        },
+        {
+            "archivo": "Q8pp8jS7TgvqxZFqepWvJ80u2xo70RK4CO0GTO6W.jpg",
+            "descripcion": "Interfaz del proyecto «Sistema de Presencia por Edificios», que permite visualizar y seleccionar ubicaciones mediante un mapa interactivo, registrar edificios y gestionar su información."
+        },
+        {
+            "archivo": "aTDGZTRuIyrkdEww7zxTqdrZmyXGJoVwf9VS2F8A.jpg",
+            "descripcion": "Los estudiantes Yeferson Constanza, Juan Granados, Josué Hernández y Kevin Villalta presentaron su proyecto «Sistema de Colección de Fútbol», un programa interactivo que combina pasión por el fútbol."
+        },
+        {
+            "archivo": "I879nm5cGgCLfMz5o2AKsjPjvCtMBcX5wVem0FN6.jpg",
+            "descripcion": "Los estudiantes Carlos Manuel, César Zuleta y Yeferson de la Cruz presentaron su proyecto«Reporte Ciudadano» una aplicación móvil que permite a los usuarios reportar situaciones que pasan en la ciudad"
+        }
+    ],
+    "evidencias": [
+        {
+            "archivo": "vIAR15axq8epRe6fPLG8WgkCfcMoMK7aHd5MxFKP.jpg",
+            "autora": "ange@blog.com",
+            "tipo": "fotografia",
+            "descripcion": "Expo System",
+            "fecha": "2026-11-19"
+        }
+    ]
+}

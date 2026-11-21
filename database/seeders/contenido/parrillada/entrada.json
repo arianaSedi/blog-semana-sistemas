@@ -1,0 +1,32 @@
+{
+    "titulo": "Parrillada",
+    "fecha": "2026-11-20",
+    "categoria": "Parrillada",
+    "categoria_descripcion": "Descripción, convivencia y reflexión.",
+    "resumen": null,
+    "contenido": "Como parte de las ultimas actividades de la Semana de Sistemas 2026, se llevó a cabo una deliciosa parrillada bajo la coordinación del Ing. Herrera, brindando a los estudiantes un espacio de convivencia, alegría y compañerismo.\r\n\r\nEsta actividad permitió compartir momentos agradables, fortalecer los lazos de amistad y disfrutar de un ambiente lleno de entusiasmo y buena comida.",
+    "estado": "publicado",
+    "autoras": [
+        "ange@blog.com"
+    ],
+    "portada": "GY1zpkgrf2fX4rS97KXbCknAVz0Z54J51gNxZ3mm.png",
+    "galeria": [
+        {
+            "archivo": "fFfjuOI8xVxEbDOnJow20l97EQgnkqGtgMou26Hb.jpg",
+            "descripcion": "En un ambiente de alegría y compañerismo, los estudiantes colaboraron en la preparación de la parrillada."
+        },
+        {
+            "archivo": "JUX6ssHxpN3pDTps7317dy8P0xeneWojg1yBoMbg.jpg",
+            "descripcion": "Durante la parrillada de la Semana de Sistemas 2026, los estudiantes esperaban con entusiasmo su comida, mientras compartían conversaciones, risas y momentos agradables en un ambiente de compañerismo."
+        }
+    ],
+    "evidencias": [
+        {
+            "archivo": "YUg7PwNHzJ9eQb1p5azNsZd4VJ69vGEgwnleoFQK.jpg",
+            "autora": "ange@blog.com",
+            "tipo": "fotografia",
+            "descripcion": "Parrillada",
+            "fecha": "2026-11-20"
+        }
+    ]
+}

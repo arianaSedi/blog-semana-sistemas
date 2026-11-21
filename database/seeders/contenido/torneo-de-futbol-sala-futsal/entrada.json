@@ -1,0 +1,24 @@
+{
+    "titulo": "Torneo de Fútbol Sala:  FutSal",
+    "fecha": "2026-11-20",
+    "categoria": "Torneo de fútbol sala",
+    "categoria_descripcion": "Desarrollo, equipos y participación como jugador o espectador.",
+    "resumen": null,
+    "contenido": "Fecha: 20 de noviembre de 2026\r\nActividad: Torneo de Fútbol Sala\r\n\r\nComo parte de las actividades deportivas de la Semana de Sistemas 2026, se llevó a cabo un emocionante torneo de fútbol sala, en el que participaron diversos equipos que demostraron su talento, habilidades y pasión por este deporte.\r\n\r\nDurante la jornada, los equipos compitieron en encuentros llenos de emoción, esfuerzo y sana rivalidad, promoviendo el trabajo en equipo, el compañerismo y el espíritu deportivo.",
+    "estado": "publicado",
+    "autoras": [
+        "ange@blog.com"
+    ],
+    "portada": "EDZuLg5upPRYoMDCAN13Px6kvVnzTAiLnUpotoLY.jpg",
+    "galeria": [
+        {
+            "archivo": "9bHsA7MgksLfHKuPita792Hx3ko9xMo9ZsZpQiEm.jpg",
+            "descripcion": "En la cancha se desarrolló el torneo de fútbol sala de la SDS 2026, donde estudiantes y espectadores se reunieron para disfrutar de los emocionantes encuentros entre los diferentes Equipos"
+        },
+        {
+            "archivo": "0HpFeM5y2ycgQYhoZMoHPxskJvE3HysCSoaLxX66.jpg",
+            "descripcion": "Estudiantes en un encuentro deportivo"
+        }
+    ],
+    "evidencias": []
+}
