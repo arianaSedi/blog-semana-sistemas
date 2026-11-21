@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\category_model;
 use App\Models\post_model;
+use App\Models\User;
 
 class PublicController extends Controller
 {
@@ -21,7 +22,15 @@ class PublicController extends Controller
             ->take(3)
             ->get();
 
-        return view('public.home', compact('categories', 'latest'));
+        // Integrantes con sus entradas publicadas y evidencias (se buscan por correo)
+        $equipo = User::withCount([
+            'authoredPosts as entradas' => fn ($q) => $q->where('status', 'publicado'),
+            'evidences as evidencias',
+        ])
+            ->get()
+            ->keyBy('email');
+
+        return view('public.home', compact('categories', 'latest', 'equipo'));
     }
 
     public function category(string $slug)

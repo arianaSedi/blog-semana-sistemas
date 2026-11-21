@@ -4,18 +4,22 @@
 
 @section('content')
 @php
-    // Foto de portada opcional: public/img/portada.jpg
-    $portada = file_exists(public_path('img/portada.jpg')) ? asset('img/portada.jpg') : null;
+    // Fotos de la portada: todas las imágenes de public/img/portada
+    $fotosPortada = collect(glob(public_path('img/portada/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG}'), GLOB_BRACE))
+        ->sort()
+        ->map(fn ($archivo) => asset('img/portada/'.basename($archivo)))
+        ->values();
 @endphp
 
-<section class="bg-marino text-white py-5">
-    <div class="container py-lg-5">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-7">
+<section id="inicio" class="bg-marino text-white position-relative overflow-hidden">
+    {{-- Texto (lado izquierdo) --}}
+    <div class="container position-relative">
+        <div class="row">
+            <div class="col-lg-6 hero-texto">
                 <p class="text-uppercase fw-bold text-lima small mb-2" style="letter-spacing:.2em">
                     Semana de Sistemas 2026 · Green IoT
                 </p>
-                <h1 class="display-4 font-display fw-bolder text-uppercase mb-3">
+                <h1 class="display-4 font-display fw-bolder mb-3">
                     Innovar sin dejar <span class="text-lima">huella de carbono</span>
                 </h1>
                 <p class="lead text-white-50 mb-4">
@@ -28,30 +32,50 @@
                     <a href="#semana" class="btn btn-outline-light btn-lg px-4">Sobre la semana</a>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <div class="col-lg-5">
-                @if ($portada)
-                    <img src="{{ $portada }}" alt="Semana de Sistemas 2026" class="img-fluid rounded-4 shadow-lg"
-                         style="aspect-ratio:4/3; object-fit:cover; width:100%">
-                @else
-                    <div class="border border-2 border-primary rounded-4 p-5 text-center">
-                        <p class="font-display display-3 fw-bolder mb-0">SDS<span class="text-lima">26</span></p>
-                        <p class="text-lima fw-bold text-uppercase mb-3" style="letter-spacing:.3em">Green IoT</p>
-                        <hr class="border-primary opacity-100 w-25 mx-auto">
-                        <p class="small text-white-50 mb-0">Universidad de El Salvador<br>Facultad Multidisciplinaria Oriental</p>
+    {{-- Fotos (lado derecho, de arriba abajo) --}}
+    @if ($fotosPortada->isNotEmpty())
+        <div class="hero-fotos">
+            <div id="carruselPortada" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-inner h-100">
+                    @foreach ($fotosPortada as $foto)
+                        <div class="carousel-item h-100 {{ $loop->first ? 'active' : '' }}">
+                            <img src="{{ $foto }}" alt="Fotografía de la Semana de Sistemas 2026" class="d-block w-100 h-100" style="object-fit: cover;">
+                        </div>
+                    @endforeach
+                </div>
+
+                @if ($fotosPortada->count() > 1)
+                    <div class="carousel-indicators">
+                        @foreach ($fotosPortada as $foto)
+                            <button type="button" data-bs-target="#carruselPortada" data-bs-slide-to="{{ $loop->index }}"
+                                    class="{{ $loop->first ? 'active' : '' }}" aria-label="Foto {{ $loop->iteration }}"></button>
+                        @endforeach
                     </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carruselPortada" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carruselPortada" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
                 @endif
             </div>
         </div>
-    </div>
+    @endif
 </section>
 
 <section id="semana" class="py-5">
     <div class="container">
         <div class="row g-5">
-            <div class="col-lg-4">
+           <div class="col-lg-4 d-flex flex-column">
                 <h2 class="font-display text-uppercase">La Semana de Sistemas 2026</h2>
                 <div class="subrayado-lima mt-2"></div>
+              <img src="{{ asset('img/logo-sds26.png') }}" alt="Logo de la Semana de Sistemas 2026 · Green IoT"
+     class="d-block mt-4 mt-lg-auto align-self-start" style="height: 220px; width: auto;" translate="no">
             </div>
             <div class="col-lg-8">
                 <p>
@@ -150,40 +174,65 @@
     </div>
 </section>
 
-<section id="equipo" class="py-5 bg-white">
-    <div class="container">
-        <h2 class="font-display text-uppercase">Nuestro equipo</h2>
-        <div class="subrayado-lima mt-2 mb-2"></div>
-        <p class="text-muted mb-4">
-            Estudiantes de Ingeniería de Sistemas Informáticos · Facultad Multidisciplinaria Oriental
-        </p>
+<section id="equipo" class="seccion-equipo py-5">
+    <div class="container py-lg-4">
 
+        {{-- Encabezado --}}
+        <div class="text-center mb-5">
+            <p class="text-lima-oscuro text-uppercase fw-bold small mb-2" style="letter-spacing:.2em">Quiénes escriben</p>
+            <h2 class="display-6 fw-bold mb-3">Nuestro equipo</h2>
+            <p class="text-muted mb-0">
+                Estudiantes de Ingeniería de Sistemas Informáticos · Facultad Multidisciplinaria Oriental
+            </p>
+        </div>
+
+        {{-- Integrantes --}}
         <div class="row g-4 justify-content-center">
             @foreach ([
-                ['Ariana Sedillo', 'SF22015', 'img/equipo/ariana.jpeg'],
-                ['Angélica Amaya', 'AP22010', 'img/equipo/angelica.jpeg'],
-            ] as [$nombre, $carnet, $foto])
+                ['nombre' => 'Ariana Sedillo', 'carnet' => 'SF22015', 'correo' => 'ari@blog.com',
+                 'foto' => 'img/equipo/ariana.jpeg', 'rol' => 'Desarrollo y diseño'],
+                ['nombre' => 'Angélica Amaya', 'carnet' => 'AP22010', 'correo' => 'ange@blog.com',
+                 'foto' => 'img/equipo/angelica.jpeg', 'rol' => 'Contenido y evidencias'],
+            ] as $persona)
+                @php $datos = $equipo[$persona['correo']] ?? null; @endphp
+
                 <div class="col-sm-6 col-lg-4">
-                    <div class="h-100 bg-nube border-top border-4 border-primary rounded-3 p-4 text-center">
-                        @if (file_exists(public_path($foto)))
-                            <img src="{{ asset($foto) }}" alt="Foto de {{ $nombre }}"
-                                 class="rounded-circle border border-4 border-white shadow-sm mb-3"
-                                 style="width:130px; height:130px; object-fit:cover">
+                    <div class="tarjeta-equipo h-100 text-center p-4 p-lg-5">
+
+                        @if (file_exists(public_path($persona['foto'])))
+                            <img src="{{ asset($persona['foto']) }}" alt="Foto de {{ $persona['nombre'] }}" class="foto-equipo mb-4">
                         @else
-                            <div class="rounded-circle bg-marino text-white d-inline-flex align-items-center justify-content-center font-display fw-bolder fs-1 border border-4 border-white shadow-sm mb-3"
-                                 style="width:130px; height:130px">
-                                {{ mb_substr($nombre, 0, 1) }}{{ mb_substr(explode(' ', $nombre)[1] ?? '', 0, 1) }}
+                            <div class="foto-equipo foto-equipo-vacia mb-4">
+                                {{ mb_substr($persona['nombre'], 0, 1) }}
                             </div>
                         @endif
-                        <h3 class="h5 font-display mb-1">{{ $nombre }}</h3>
-                        <p class="text-muted small mb-0">Carnet: {{ $carnet }}</p>
+
+                        <h3 class="h4 fw-bold mb-1">{{ $persona['nombre'] }}</h3>
+                        <p class="text-muted small mb-3">Carnet {{ $persona['carnet'] }}</p>
+                        <span class="rol-equipo">{{ $persona['rol'] }}</span>
+
+                        <div class="row g-2 mt-4">
+                            <div class="col-6">
+                                <div class="dato-equipo">
+                                    <span class="numero">{{ $datos->entradas ?? 0 }}</span>
+                                    <span class="texto">{{ ($datos->entradas ?? 0) === 1 ? 'entrada' : 'entradas' }}</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="dato-equipo">
+                                    <span class="numero">{{ $datos->evidencias ?? 0 }}</span>
+                                    <span class="texto">{{ ($datos->evidencias ?? 0) === 1 ? 'evidencia' : 'evidencias' }}</span>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             @endforeach
         </div>
 
-        <p class="text-center text-muted small mt-4 mb-0">
-            Proyecto práctico de <strong>Técnicas de Programación para Internet</strong> · Universidad de El Salvador
+        <p class="text-center text-muted small mt-5 mb-0">
+            Proyecto práctico de <strong >Técnicas de Programación para Internet</strong> · Universidad de El Salvador
         </p>
     </div>
 </section>
